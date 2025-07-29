@@ -12,7 +12,26 @@
   <div id="ageGate" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
     <div class="bg-white text-black p-8 rounded-xl text-center max-w-sm mx-auto">
       <h2 class="text-2xl font-bold mb-4">Are you 21 or older?</h2>
-      <button onclick="document.getElementById('ageGate').style.display='none'" class="bg-black text-white px-6 py-2 rounded hover:bg-neutral-800">Yes, Enter</button>
+      <button onclick="document.getElementById('ageGate').style.display='none'" class="bg-black text-white px-6 py-2 rounded hover:bg-neutral-800">Yes, Enter</button><button onclick="denyAccess()" class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-500">
+        No, I'm not
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Underage Blocker -->
+<div id="underageBlock" class="hidden fixed inset-0 bg-black text-white z-50 flex flex-col items-center justify-center p-4 text-center">
+  <img src="https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif" alt="Barney" class="max-w-xs rounded-xl mb-6">
+  <p class="text-xl font-semibold">Oops! You gotta be 21+ to hang with Sweet Charlie.</p>
+  <p class="text-sm text-gray-400 mt-2">Come back when you’re older, champ.</p>
+</div>
+
+<script>
+  function denyAccess() {
+    document.getElementById('ageGate').style.display = 'none';
+    document.getElementById('underageBlock').classList.remove('hidden');
+  }
+</script>
     </div>
   </div>
 
