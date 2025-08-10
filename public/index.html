@@ -31,13 +31,60 @@
     }
   </script>
 
-  <!-- Logo -->
-  <div class="flex justify-center mt-8 z-10">
-    <img src="/images/gpt.png" alt="Sweet Charlie's Garden Logo" class="w-72 md:w-96 rounded-xl shadow-lg">
+<!-- Sticky Header (compact) -->
+<header class="sticky top-0 z-40 border-b border-white/10 bg-black/60 backdrop-blur">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="h-16 flex items-center justify-between">
+      <!-- Left: Logo -->
+      <a href="/" class="flex items-center gap-3">
+        <img
+          src="/images/sweet_charlies_logo.png"
+          alt="Sweet Charlie's Garden logo"
+          class="h-12 w-auto md:h-14"
+          loading="eager"
+          decoding="async"
+        />
+        <span class="sr-only">Sweet Charlie's Garden</span>
+      </a>
+
+      <!-- Right: future menu placeholder -->
+      <div class="flex items-center gap-3">
+        <button
+          type="button"
+          class="hidden md:inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 transition"
+          aria-label="Open menu"
+        >
+          Menu
+        </button>
+      </div>
+    </div>
   </div>
+</header>
+
+
+<!-- Large Logo Above Hero with Animation -->
+<div class="flex justify-center mt-8 opacity-0 translate-y-4 transition-all duration-1000 ease-out" id="bigLogo">
+  <img
+    src="/images/sweet_charlies_logo.png"
+    alt="Sweet Charlie's Garden"
+    class="h-40 md:h-56 lg:h-64 w-auto"
+  />
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const logo = document.getElementById('bigLogo');
+    // trigger animation after a short delay for effect
+    setTimeout(() => {
+      logo.classList.remove('opacity-0', 'translate-y-4');
+    }, 100);
+  });
+</script>
+
+
 
   <!-- Hero Section with Video -->
-  <section class="relative px-4 py-16 flex flex-col items-center text-center">
+  <section class="relative px-4 py-16 pt-24 flex flex-col items-center text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-6">Sweet Charlie's Garden</h1>
     <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-10">
       Indoor No-Till, Living Soil Grown Flower Coming to Colorado's Rec Market in 2026.
@@ -88,6 +135,7 @@
 
     <!-- Extended Gallery -->
     <div class="w-full max-w-6xl mt-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="/images/gpt.png" alt="Top" class="rounded-xl shadow-lg object-cover w-full h-64">
       <img src="/images/shapiro_deli.png" alt="Top" class="rounded-xl shadow-lg object-cover w-full h-64">
       <img src="/images/stacked_top.JPG" alt="Stacked Top" class="rounded-xl shadow-lg object-cover w-full h-64">
       <img src="/images/flower_room.JPG" alt="Flower Room" class="rounded-xl shadow-lg object-cover w-full h-64">
