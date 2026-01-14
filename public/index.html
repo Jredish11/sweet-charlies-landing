@@ -149,20 +149,93 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="w-full bg-cream py-10">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <a
-        href="https://www.instagram.com/sweetcharliesco"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center space-x-2 text-ink hover:text-crimson transition"
-      >
-        @sweetcharliesco
-      </a>
-      <p class="text-sm text-ink mt-4">&copy; 2025 Sweet Charlies LLC. All rights reserved.</p>
+
+<!-- Email Signup (centered + responsive) -->
+<section class="w-full bg-cream py-12 border-t border-ink/10 text-ink">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-bold mb-4 text-ink">Stay in the Loop</h2>
+    <p class="text-base text-ink/80 mb-6">
+      Be the first to know about new flower drops and single-source solventless releases.
+    </p>
+
+    <!-- Center the embed -->
+    <div class="mx-auto w-full max-w-[600px] rounded-2xl border border-ink/10 bg-cream shadow-sm overflow-hidden">
+      <iframe
+        data-tally-src="https://tally.so/embed/w5Pp5E?alignLeft=0&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        class="w-full border-0 bg-transparent"
+        style="min-height: 260px;"
+        title="Sweet Charlie's Email Sign-Up">
+      </iframe>
     </div>
-  </footer>
+  </div>
+</section>
+
+
+<script>
+  (function () {
+    var d = document, w = "https://tally.so/widgets/embed.js";
+    function v() {
+      if (typeof Tally !== "undefined") Tally.loadEmbeds();
+      else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+        e.src = e.dataset.tallySrc;
+      });
+    }
+    if (typeof Tally !== "undefined") v();
+    else if (!d.querySelector('script[src="' + w + '"]')) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  })();
+</script>
+
+
+<!-- Gallery -->
+<section class="w-full bg-soil">
+  <div class="w-full max-w-6xl mx-auto mt-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <img src="/images/gpt.png" alt="Top" class="rounded-xl shadow-lg object-cover w-full h-64">
+    <img src="/images/stacked_top.JPG" alt="Stacked Top" class="rounded-xl shadow-lg object-cover w-full h-64">
+    <img src="/images/flower_room.JPG" alt="Flower Room" class="rounded-xl shadow-lg object-cover w-full h-64">
+    <img src="/images/filling_out.JPG" alt="Filling Out" class="rounded-xl shadow-lg object-cover w-full h-64">
+    <img src="/images/papa.PNG" alt="Papa" class="rounded-xl shadow-lg object-cover w-full h-64">
+    <img src="/images/chunky.JPG" alt="Chunky" class="rounded-xl shadow-lg object-cover w-full h-64">
+    <img src="/images/top.JPG" alt="Top" class="rounded-xl shadow-lg object-cover w-full h-64">
+  </div>
+</section>
+
+
+  <!-- Instagram & Footer -->
+<section class="w-full bg-cream py-10 border-t border-ink/10">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <a
+      href="https://www.instagram.com/sweetcharliesco"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center space-x-2 text-ink hover:text-crimson transition"
+      aria-label="Follow us on Instagram"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+        <path fill="currentColor" d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5Z M7.75 3.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5ZM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10Zm0 1.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7Zm5.25-.88a1.13 1.13 0 1 1-2.25 0a1.13 1.13 0 0 1 2.25 0Z"/>
+      </svg>
+      <span class="font-medium">@sweetcharliesco</span>
+    </a>
+
+    <footer class="text-sm text-ink/70 text-center mt-4">
+      &copy; 2025 Sweet Charlies LLC. All rights reserved.
+    </footer>
+  </div>
+</section>
+
+  </main>
+
+  <style>
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+
 
 </body>
 </html>
