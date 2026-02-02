@@ -8,7 +8,6 @@
     <title>Sweet Charlie’s | Living Soil Cannabis & Single-Source Solventless Rosin — Colorado</title>
     <meta name="description" content="Sweet Charlie’s is a Colorado living soil cannabis brand producing small-batch flower and single-source solventless rosin. Cultivated, washed, and pressed in-house." />
 
-    <!-- Canonical (update if domain changes or remove until live) -->
     <link rel="canonical" href="https://sweetcharliesco.com/" />
 
     <!-- Open Graph (social previews) -->
@@ -18,13 +17,13 @@
     <meta property="og:url" content="https://sweetcharliesco.com/" />
     <meta property="og:image" content="https://sweetcharliesco.com/og.jpg" />
 
-    <!-- Twitter Card (no Twitter account required) -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sweet Charlie’s Living Soil Cannabis" />
     <meta name="twitter:description" content="Colorado living soil cannabis and single-source solventless rosin." />
     <meta name="twitter:image" content="https://sweetcharliesco.com/og.jpg" />
 
-    <!-- Structured Data: Organization -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,7 +59,7 @@
       }
     </script>
 
-    <!-- Favicons (expanded for visibility) -->
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
@@ -72,6 +71,11 @@
   </head>
 
   <body class="relative bg-ink text-cream font-sans min-h-screen overflow-x-hidden">
+
+    <!-- Background Audio -->
+    <audio id="bgAudio" preload="auto" loop>
+      <source src="/audio/because.mid.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- 21+ Age Gate -->
     <div id="ageGate" class="fixed inset-0 z-[999] bg-ink/90 backdrop-blur-sm flex items-center justify-center">
@@ -115,17 +119,19 @@
           <h3 class="font-headline text-3xl font-extrabold mb-3">
             Oy vey!
           </h3>
-        
+
           <p class="text-sm text-ink/80 mb-5">
             You’re too young to visit this site!
           </p>
-        
+
           <img
             src="https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif"
             alt="Too young message"
             class="w-full max-w-xs mx-auto rounded-xl shadow-md mb-6"
+            loading="eager"
+            referrerpolicy="no-referrer"
           />
-        
+
           <a
             href="https://www.google.com"
             class="inline-block px-6 py-3 bg-ink text-cream rounded-lg font-semibold hover:opacity-90 transition"
@@ -133,8 +139,6 @@
           >
             Leave Site
           </a>
-        </div>
-        
         </div>
 
       </div>
@@ -145,7 +149,6 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="h-[72px] flex items-center justify-between">
           <a href="/" class="flex items-center gap-3">
-            <!-- SECONDARY SC MARK -->
             <img
               src="/images/sweet_charlies_sc_secondary_website.png"
               alt="Sweet Charlie’s Living Soil Cannabis logo"
@@ -155,7 +158,7 @@
             />
             <span class="sr-only">Sweet Charlie’s Living Soil Cannabis</span>
           </a>
-        
+
           <!-- Header links -->
           <nav class="flex items-center gap-6">
             <a
@@ -166,7 +169,6 @@
             </a>
           </nav>
         </div>
-        
       </div>
     </header>
 
@@ -177,7 +179,6 @@
           id="bigLogo"
           class="py-10 md:py-12 flex items-center justify-center opacity-0 translate-y-4 transition-all duration-1000 ease-out"
         >
-          <!-- PRIMARY SCRIPT LOGO (SVG) -->
           <img
             src="/images/sweet_charlies_script_primary.svg"
             alt="Sweet Charlie’s Living Soil Cannabis"
@@ -190,32 +191,19 @@
       </div>
     </section>
 
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        const logo = document.getElementById('bigLogo');
-        setTimeout(() => {
-          logo.classList.remove('opacity-0', 'translate-y-4');
-        }, 100);
-      });
-    </script>
-
     <!-- Hero -->
     <section class="relative px-4 py-16 pt-24 flex flex-col items-center text-center bg-cream">
 
-      <!-- Eyebrow -->
       <p class="text-sm uppercase tracking-[0.2em] text-crimson font-semibold mb-3">
         Colorado Living Soil Cannabis
       </p>
 
-      <!-- Headline -->
       <h1 class="font-headline text-4xl md:text-6xl font-extrabold text-ink mb-4 leading-[1.05] tracking-tight">
         Sweet Charlie’s — Colorado-Grown Living Soil Flower & Single-Source Solventless Hash
       </h1>
 
-      <!-- Accent rule -->
       <div class="h-1 w-24 bg-crimson rounded-full mb-6"></div>
 
-      <!-- Subcopy -->
       <p class="text-lg md:text-xl text-ink/80 max-w-2xl mb-10 leading-relaxed font-medium">
         Indoor, no-till flower grown in living soil with care and patience.
         Built on sustainability, cleanliness, and respect for the plant.
@@ -270,7 +258,7 @@
       </section>
     </main>
 
-    <!-- Email Signup (centered + responsive) -->
+    <!-- Email Signup -->
     <section class="w-full bg-cream py-12 border-t border-ink/10 text-ink">
       <div class="max-w-3xl mx-auto px-4 text-center">
         <h2 class="text-2xl font-bold mb-4 text-ink">Stay in the Loop</h2>
@@ -278,7 +266,6 @@
           Be the first to know about new flower drops and single-source solventless releases.
         </p>
 
-        <!-- Center the embed -->
         <div class="mx-auto w-full max-w-[600px] rounded-2xl border border-ink/10 bg-cream shadow-sm overflow-hidden">
           <iframe
             data-tally-src="https://tally.so/embed/w5Pp5E?alignLeft=0&hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -349,27 +336,45 @@
     <style>
       .scrollbar-hide::-webkit-scrollbar { display: none; }
       .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
-      /* Headline font helper */
       .font-headline { font-family: "Fraunces", serif; }
     </style>
 
-    <!-- ✅ Age gate behavior (FIXED): placed at end + waits for DOM -->
+    <!-- Scripts -->
     <script>
       window.addEventListener('DOMContentLoaded', () => {
+        // Logo fade-in
+        const logo = document.getElementById('bigLogo');
+        if (logo) {
+          setTimeout(() => {
+            logo.classList.remove('opacity-0', 'translate-y-4');
+          }, 100);
+        }
+
+        // Age gate + audio
         const gate = document.getElementById('ageGate');
         const prompt = document.getElementById('ageGatePrompt');
         const nope = document.getElementById('ageGateNope');
         const yesBtn = document.getElementById('ageYes');
         const noBtn = document.getElementById('ageNo');
+        const audio = document.getElementById('bgAudio');
 
-        // If already verified, hide gate
+        const tryPlay = () => {
+          if (!audio) return;
+          audio.volume = 0.25;
+          audio.play().catch(() => {
+            // Autoplay is commonly blocked unless the user clicked something.
+            // This is expected if they refresh while already verified.
+          });
+        };
+
+        // If already verified, hide gate (and attempt to play quietly; may be blocked on refresh)
         if (localStorage.getItem('ageVerified') === 'yes') {
           if (gate) gate.style.display = 'none';
+          tryPlay();
           return;
         }
 
-        // Safety: if markup missing, don't break the site
+        // Safety: if any element missing, don't break site
         if (!gate || !prompt || !nope || !yesBtn || !noBtn) {
           console.warn('Age gate elements not found. Check IDs/placement.');
           return;
@@ -378,6 +383,8 @@
         yesBtn.addEventListener('click', () => {
           localStorage.setItem('ageVerified', 'yes');
           gate.style.display = 'none';
+          // This click counts as a user gesture, so audio should play reliably.
+          tryPlay();
         });
 
         noBtn.addEventListener('click', () => {
