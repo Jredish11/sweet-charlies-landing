@@ -71,71 +71,76 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
 
-  <body  class="relative bg-ink text-cream font-sans min-h-screen overflow-x-hidden">
+  <body class="relative bg-ink text-cream font-sans min-h-screen overflow-x-hidden">
+
     <!-- 21+ Age Gate -->
-<div id="ageGate" class="fixed inset-0 z-[999] bg-ink/90 backdrop-blur-sm flex items-center justify-center">
-  <div class="bg-cream text-ink max-w-md w-full mx-4 rounded-2xl shadow-2xl p-8 border border-ink/10 text-center">
+    <div id="ageGate" class="fixed inset-0 z-[999] bg-ink/90 backdrop-blur-sm flex items-center justify-center">
+      <div class="bg-cream text-ink max-w-md w-full mx-4 rounded-2xl shadow-2xl p-8 border border-ink/10 text-center">
 
-    <!-- Default (question) state -->
-    <div id="ageGatePrompt">
-      <p class="text-sm uppercase tracking-[0.2em] text-crimson font-semibold mb-3">
-        Sweet Charlie’s
-      </p>
+        <!-- Default (question) state -->
+        <div id="ageGatePrompt">
+          <p class="text-sm uppercase tracking-[0.2em] text-crimson font-semibold mb-3">
+            Sweet Charlie’s
+          </p>
 
-      <h2 class="font-headline text-3xl font-extrabold mb-3">
-        Are you 21 or older?
-      </h2>
+          <h2 class="font-headline text-3xl font-extrabold mb-3">
+            Are you 21 or older?
+          </h2>
 
-      <p class="text-sm text-ink/80 mb-6">
-        You must be of legal age to enter this site.
-      </p>
+          <p class="text-sm text-ink/80 mb-6">
+            You must be of legal age to enter this site.
+          </p>
 
-      <div class="flex gap-4 justify-center">
-        <button id="ageYes"
-          class="px-6 py-3 bg-crimson text-cream rounded-lg font-semibold hover:opacity-90 transition">
-          Yes — Enter
-        </button>
+          <div class="flex gap-4 justify-center">
+            <button
+              id="ageYes"
+              type="button"
+              class="px-6 py-3 bg-crimson text-cream rounded-lg font-semibold hover:opacity-90 transition"
+            >
+              Yes — Enter
+            </button>
 
-        <button id="ageNo"
-          class="px-6 py-3 border border-ink/30 rounded-lg font-semibold hover:bg-ink/5 transition">
-          No
-        </button>
+            <button
+              id="ageNo"
+              type="button"
+              class="px-6 py-3 border border-ink/30 rounded-lg font-semibold hover:bg-ink/5 transition"
+            >
+              No
+            </button>
+          </div>
+        </div>
+
+        <!-- "Too young" state -->
+        <div id="ageGateNope" class="hidden">
+          <h3 class="font-headline text-3xl font-extrabold mb-3">
+            Oy vey!
+          </h3>
+
+          <p class="text-sm text-ink/80 mb-5">
+            You’re too young to visit this site!
+          </p>
+
+          <div class="rounded-xl overflow-hidden border border-ink/10 shadow-sm bg-white">
+            <img
+              src="/images/pepe-silvia.gif"
+              alt=""
+              class="w-full h-auto block"
+            />
+          </div>
+
+          <div class="mt-6 flex justify-center">
+            <a
+              href="https://www.google.com"
+              class="px-6 py-3 bg-ink text-cream rounded-lg font-semibold hover:opacity-90 transition"
+              rel="nofollow"
+            >
+              Leave Site
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <!-- "Too young" state -->
-    <div id="ageGateNope" class="hidden">
-      <h3 class="font-headline text-3xl font-extrabold mb-3">
-        Oy vey!
-      </h3>
-
-      <p class="text-sm text-ink/80 mb-5">
-        You’re too young to visit this site!
-      </p>
-
-      <!-- Replace the src with YOUR hosted gif path -->
-      <div class="rounded-xl overflow-hidden border border-ink/10 shadow-sm bg-white">
-        <img
-          src="/images/pepe-silvia.gif"
-          alt=""
-          class="w-full h-auto block"
-        />
-      </div>
-
-      <div class="mt-6 flex justify-center">
-        <a
-          href="https://www.google.com"
-          class="px-6 py-3 bg-ink text-cream rounded-lg font-semibold hover:opacity-90 transition"
-          rel="nofollow"
-        >
-          Leave Site
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
     <!-- Sticky Header -->
     <header class="sticky top-0 z-40 border-b border-cream/15 bg-cream shadow-sm">
@@ -221,7 +226,6 @@
     <main class="relative z-10">
       <section class="w-full bg-white text-ink">
         <div class="max-w-5xl mx-auto px-4 py-12 text-center">
-
 
           <div class="grid gap-4 md:grid-cols-3 w-full max-w-4xl mt-8 mx-auto text-left">
 
@@ -340,6 +344,39 @@
       /* Headline font helper */
       .font-headline { font-family: "Fraunces", serif; }
     </style>
+
+    <!-- ✅ Age gate behavior (FIXED): placed at end + waits for DOM -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const gate = document.getElementById('ageGate');
+        const prompt = document.getElementById('ageGatePrompt');
+        const nope = document.getElementById('ageGateNope');
+        const yesBtn = document.getElementById('ageYes');
+        const noBtn = document.getElementById('ageNo');
+
+        // If already verified, hide gate
+        if (localStorage.getItem('ageVerified') === 'yes') {
+          if (gate) gate.style.display = 'none';
+          return;
+        }
+
+        // Safety: if markup missing, don't break the site
+        if (!gate || !prompt || !nope || !yesBtn || !noBtn) {
+          console.warn('Age gate elements not found. Check IDs/placement.');
+          return;
+        }
+
+        yesBtn.addEventListener('click', () => {
+          localStorage.setItem('ageVerified', 'yes');
+          gate.style.display = 'none';
+        });
+
+        noBtn.addEventListener('click', () => {
+          prompt.classList.add('hidden');
+          nope.classList.remove('hidden');
+        });
+      });
+    </script>
 
   </body>
 </html>
