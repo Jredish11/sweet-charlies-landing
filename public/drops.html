@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Sweet Charlie’s Drops | Colorado Living Soil Cannabis</title>
+  <meta name="description" content="Current flower and solventless drops from Sweet Charlie’s. Find participating Colorado retailers and drop details." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#FBF3E7",
+            crimson: "#7A0E1A",
+            ink: "#111111",
+            soil: "#3A2618"
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .font-headline { font-family: "Fraunces", serif; }
+  </style>
+</head>
+
+<body class="bg-cream text-ink min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-cream">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="h-[72px] flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/images/sweet_charlies_sc_secondary_website.png" alt="Sweet Charlie’s logo" class="h-11 w-auto" />
+          <span class="sr-only">Sweet Charlie’s</span>
+        </a>
+
+        <nav class="flex items-center gap-6">
+          <a href="/" class="font-semibold hover:text-crimson transition">Home</a>
+          <a href="/drops.html" class="font-semibold text-crimson">Drops</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page -->
+  <main class="mx-auto max-w-5xl px-4 py-12">
+
+    <div class="text-center">
+      <p class="text-sm uppercase tracking-[0.2em] text-crimson font-semibold mb-3">
+        Colorado Drop Info
+      </p>
+
+      <h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+        Current Drops
+      </h1>
+
+      <p class="text-lg text-ink/75 max-w-2xl mx-auto">
+        Updated drop details and participating retailers. Inventory moves fast—call ahead.
+      </p>
+
+      <div class="h-1 w-24 bg-crimson rounded-full mx-auto mt-6"></div>
+    </div>
+
+    <!-- Current Drop Card -->
+    <section class="mt-12 rounded-2xl border border-ink/10 bg-white shadow-sm p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+        <div>
+          <h2 class="font-headline text-3xl font-extrabold mb-2">Drop: [Name / Strain / Batch]</h2>
+          <p class="text-sm text-ink/70 mb-4">Date: [Month Day, 2026] • Format: [Flower / Rosin / Both]</p>
+
+          <div class="space-y-3 text-ink/85">
+            <p><span class="font-semibold">What it is:</span> [Short description of the drop]</p>
+            <p><span class="font-semibold">Notes:</span> [Flavor / effect / phenotype notes]</p>
+            <p><span class="font-semibold">Availability:</span> [Limited / rotating / select stores]</p>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-cream border border-ink/10 p-5 min-w-[260px]">
+          <h3 class="font-semibold text-crimson mb-2">Quick Info</h3>
+          <ul class="text-sm space-y-2">
+            <li><span class="font-semibold">Type:</span> [Live Rosin / Flower]</li>
+            <li><span class="font-semibold">Pack:</span> [1g / 2g / 1/8]</li>
+            <li><span class="font-semibold">Release:</span> [Week of …]</li>
+            <li><span class="font-semibold">Region:</span> Colorado</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map + Retailers -->
+    <section class="mt-12">
+      <h2 class="font-headline text-3xl font-extrabold mb-3">Where to Find</h2>
+      <p class="text-ink/75 mb-6">
+        These are the participating retailers for this drop. We’ll keep this list updated.
+      </p>
+
+      <!-- Embedded map -->
+      <div class="rounded-2xl overflow-hidden border border-ink/10 shadow-sm bg-white">
+        <!-- Replace the src with your Google My Maps embed link -->
+        <iframe
+          src="YOUR_GOOGLE_MY_MAPS_EMBED_URL_HERE"
+          width="100%"
+          height="520"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sweet Charlie’s Retailers Map"
+        ></iframe>
+      </div>
+
+      <!-- Optional retailer list you can update -->
+      <div class="mt-6 grid md:grid-cols-2 gap-4">
+        <div class="rounded-xl border border-ink/10 bg-white p-5">
+          <p class="font-semibold">[Retailer Name]</p>
+          <p class="text-sm text-ink/70">[City], CO</p>
+          <p class="text-sm text-ink/70">[Notes: drop day / product type / etc.]</p>
+        </div>
+
+        <div class="rounded-xl border border-ink/10 bg-white p-5">
+          <p class="font-semibold">[Retailer Name]</p>
+          <p class="text-sm text-ink/70">[City], CO</p>
+          <p class="text-sm text-ink/70">[Notes]</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-ink/60 mt-6">
+        Note: Retail availability varies. Please check with the store for current inventory.
+      </p>
+    </section>
+
+    <!-- Past Drops (optional) -->
+    <section class="mt-12">
+      <h2 class="font-headline text-2xl font-extrabold mb-3">Past Drops</h2>
+      <ul class="text-sm text-ink/75 space-y-2">
+        <li>• [Drop Name] — [Month 2026]</li>
+        <li>• [Drop Name] — [Month 2026]</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="py-10 text-center text-sm text-ink/60">
+    &copy; 2026 Sweet Charlies LLC. All rights reserved.
+  </footer>
+
+</body>
+</html>
