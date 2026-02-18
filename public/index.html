@@ -78,7 +78,13 @@
     </audio>
 
     <!-- 21+ Age Gate -->
-    <div id="ageGate" class="fixed inset-0 z-[999] bg-ink/90 backdrop-blur-sm flex items-center justify-center">
+    <div
+      id="ageGate"
+      class="fixed inset-0 z-[999] bg-ink/90 backdrop-blur-sm flex items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Age Verification"
+    >
       <div class="bg-cream text-ink max-w-md w-full mx-4 rounded-2xl shadow-2xl p-8 border border-ink/10 text-center">
 
         <!-- Default (question) state -->
@@ -172,6 +178,18 @@
       </div>
     </header>
 
+    <!-- Launch Banner (premium polish: thin crimson top line + subtle dot separator) -->
+    <div class="w-full bg-ink text-cream border-b border-cream/15">
+      <div class="h-[2px] bg-crimson w-full"></div>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="py-2 text-center text-xs sm:text-sm font-semibold tracking-wide">
+          <span>Coming to the Colorado Recreational Market</span>
+          <span class="inline-block align-middle mx-2 text-crimson" aria-hidden="true">•</span>
+          <span>Late 2026</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Brand Band / Primary Logo -->
     <section class="bg-cream border-b border-ink/10">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -195,19 +213,18 @@
     <section class="relative px-4 py-16 pt-24 flex flex-col items-center text-center bg-cream">
 
       <p class="text-sm uppercase tracking-[0.2em] text-crimson font-semibold mb-3">
-        Colorado Living Soil Cannabis
+        Living Soil • Single-Source • Small Batch
       </p>
 
       <h1 class="font-headline text-4xl md:text-6xl font-extrabold text-ink mb-4 leading-[1.05] tracking-tight">
-        Sweet Charlie’s — Colorado-Grown Living Soil Flower & Single-Source Solventless Hash
+        Living Soil Flower & Single-Source Solventless Hash  
       </h1>
 
       <div class="h-1 w-24 bg-crimson rounded-full mb-6"></div>
 
       <p class="text-lg md:text-xl text-ink/80 max-w-2xl mb-10 leading-relaxed font-medium">
-        Indoor, no-till flower grown in living soil with care and patience.
-        Built on sustainability, cleanliness, and respect for the plant.
-        Every step handled in-house by Sweet Charlie’s — from cultivation to the hash lab.
+        Grown in living soil. Washed and pressed from our own harvests.
+        Small-batch drops built around flavor, effect, and process — not volume.
       </p>
 
       <div class="w-full max-w-3xl rounded-xl overflow-hidden shadow-lg border border-ink/10">
@@ -229,29 +246,28 @@
             <div class="rounded-xl p-5 border border-black/10 bg-white">
               <h3 class="font-semibold mb-1 text-crimson">Living Soil • No-Till</h3>
               <p class="text-sm text-gray-700">
-                We grow our cannabis in living organic soil—without synthetic nutrients,
-                chemical inputs, or foliar sprays.
+                Living soil beds, no-till methodology, and biological inputs — built for terpene expression and plant health.
               </p>
             </div>
 
             <div class="rounded-xl p-5 border border-black/10 bg-white">
               <h3 class="font-semibold mb-1 text-crimson">Single-Source Solventless</h3>
               <p class="text-sm text-gray-700">
-                Grown and pressed by the same hands. We only wash what we grow.
+                Single-source means we only wash what we grow — fully traceable from harvest to jar.
               </p>
             </div>
 
             <div class="rounded-xl p-5 border border-black/10 bg-white">
               <h3 class="font-semibold mb-1 text-crimson">Independent Craft</h3>
               <p class="text-sm text-gray-700">
-                Owner-operated, small-batch. No rushing, no volume chasing.
+                Owner-operated and process-driven. Limited drops, intentional batches, no corner-cutting.
               </p>
             </div>
 
           </div>
 
           <p class="mt-8 text-sm text-gray-900">
-            We’ll have single-source solventless products and select flower drops throughout the calendar year.
+            Limited flower and solventless drops beginning with our Colorado rec launch.
           </p>
 
         </div>
@@ -336,11 +352,18 @@
       .scrollbar-hide::-webkit-scrollbar { display: none; }
       .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       .font-headline { font-family: "Fraunces", serif; }
+
+      /* Age gate hide animation + click safety */
+      .agegate-hidden {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 250ms ease;
+      }
     </style>
 
     <!-- Scripts -->
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', () => {
         // Logo fade-in
         const logo = document.getElementById('bigLogo');
         if (logo) {
@@ -348,7 +371,7 @@
             logo.classList.remove('opacity-0', 'translate-y-4');
           }, 100);
         }
-
+    
         // Age gate + audio
         const gate = document.getElementById('ageGate');
         const prompt = document.getElementById('ageGatePrompt');
@@ -356,42 +379,52 @@
         const yesBtn = document.getElementById('ageYes');
         const noBtn = document.getElementById('ageNo');
         const audio = document.getElementById('bgAudio');
-
-        const tryPlay = () => {
-          if (!audio) return;
-          audio.volume = 0.25;
-          audio.play().catch(() => {
-            // Autoplay is commonly blocked unless the user clicked something.
-            // This is expected if they refresh while already verified.
-          });
-        };
-
-        // If already verified, hide gate (and attempt to play quietly; may be blocked on refresh)
-        if (localStorage.getItem('ageVerified') === 'yes') {
-          if (gate) gate.style.display = 'none';
-          tryPlay();
-          return;
-        }
-
-        // Safety: if any element missing, don't break site
+    
         if (!gate || !prompt || !nope || !yesBtn || !noBtn) {
           console.warn('Age gate elements not found. Check IDs/placement.');
           return;
         }
-
+    
+        const tryPlay = () => {
+          if (!audio) return;
+          audio.volume = 0.25;
+          audio.play().catch(() => {
+            // Autoplay may still be blocked in some cases, but after a click it's usually allowed.
+          });
+        };
+    
+        const hideGate = () => {
+          gate.classList.add('agegate-hidden');
+          setTimeout(() => {
+            gate.style.display = 'none';
+          }, 260);
+        };
+    
+        // IMPORTANT: Do NOT remember anything.
+        // Always show the age gate on every visit.
+        gate.style.display = 'flex';
+        gate.classList.remove('agegate-hidden');
+    
         yesBtn.addEventListener('click', () => {
-          localStorage.setItem('ageVerified', 'yes');
-          gate.style.display = 'none';
-          // This click counts as a user gesture, so audio should play reliably.
+          hideGate();
           tryPlay();
         });
-
+    
         noBtn.addEventListener('click', () => {
           prompt.classList.add('hidden');
           nope.classList.remove('hidden');
         });
+    
+        // ESC returns from "Nope" state back to the question (does not bypass)
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !nope.classList.contains('hidden')) {
+            nope.classList.add('hidden');
+            prompt.classList.remove('hidden');
+          }
+        });
       });
     </script>
+    
 
   </body>
 </html>
