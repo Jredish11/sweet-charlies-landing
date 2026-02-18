@@ -217,7 +217,7 @@
       </p>
 
       <h1 class="font-headline text-4xl md:text-6xl font-extrabold text-ink mb-4 leading-[1.05] tracking-tight">
-        Living Soil Flower & Single-Source Solventless
+        Living Soil Flower & Single-Source Solventless Hash  
       </h1>
 
       <div class="h-1 w-24 bg-crimson rounded-full mb-6"></div>
@@ -371,7 +371,7 @@
             logo.classList.remove('opacity-0', 'translate-y-4');
           }, 100);
         }
-
+    
         // Age gate + audio
         const gate = document.getElementById('ageGate');
         const prompt = document.getElementById('ageGatePrompt');
@@ -379,49 +379,43 @@
         const yesBtn = document.getElementById('ageYes');
         const noBtn = document.getElementById('ageNo');
         const audio = document.getElementById('bgAudio');
-
-        // Safety: if any element missing, don't break site
+    
         if (!gate || !prompt || !nope || !yesBtn || !noBtn) {
           console.warn('Age gate elements not found. Check IDs/placement.');
           return;
         }
-
+    
         const tryPlay = () => {
           if (!audio) return;
           audio.volume = 0.25;
           audio.play().catch(() => {
-            // Autoplay is commonly blocked unless the user clicked something.
+            // Autoplay may still be blocked in some cases, but after a click it's usually allowed.
           });
         };
-
+    
         const hideGate = () => {
-          // Use a class so the overlay stops intercepting clicks immediately
           gate.classList.add('agegate-hidden');
-          // Then fully remove from layout after transition
           setTimeout(() => {
             gate.style.display = 'none';
           }, 260);
         };
-
-        // If already verified, hide gate (and attempt to play quietly; may be blocked on refresh)
-        if (localStorage.getItem('ageVerified') === 'yes') {
-          hideGate();
-          tryPlay();
-        }
-
+    
+        // IMPORTANT: Do NOT remember anything.
+        // Always show the age gate on every visit.
+        gate.style.display = 'flex';
+        gate.classList.remove('agegate-hidden');
+    
         yesBtn.addEventListener('click', () => {
-          localStorage.setItem('ageVerified', 'yes');
           hideGate();
-          // This click counts as a user gesture, so audio should play reliably.
           tryPlay();
         });
-
+    
         noBtn.addEventListener('click', () => {
           prompt.classList.add('hidden');
           nope.classList.remove('hidden');
         });
-
-        // Optional: ESC just closes the "Nope" state back to prompt (doesn't bypass age gate)
+    
+        // ESC returns from "Nope" state back to the question (does not bypass)
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && !nope.classList.contains('hidden')) {
             nope.classList.add('hidden');
@@ -430,6 +424,7 @@
         });
       });
     </script>
+    
 
   </body>
 </html>
