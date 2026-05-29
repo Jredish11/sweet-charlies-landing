@@ -171,10 +171,13 @@
       }
       .header-inner {
         max-width: 1200px; margin: 0 auto;
-        padding: 0 0.5rem; height: 68px;
+        padding: 0 0.5rem; height: 80px;
         display: flex; align-items: center; justify-content: space-between;
       }
-      .header-logo img { height: 54px; width: auto; }
+      @media (min-width: 1024px) {
+        .header-inner { padding: 0 1rem; }
+      }
+      .header-logo img { height: 68px; width: auto; }
       .header-nav { display: flex; align-items: center; gap: 2rem; }
       .nav-link {
         font-size: 0.72rem; font-weight: 700;
@@ -189,7 +192,7 @@
       /* Banner */
       .launch-banner {
         background: var(--parchment); color: var(--ink-soft);
-        text-align: center; padding: 0.55rem 1rem;
+        text-align: center; padding: 0.75rem 1rem;
         font-family: var(--font-sans); font-size: 0.68rem;
         font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
         border-bottom: 1px solid rgba(26,18,8,0.12);
@@ -253,7 +256,7 @@
         font-family: var(--font-serif); font-style: italic;
         font-size: clamp(0.95rem, 1.6vw, 1.075rem);
         color: rgba(26,18,8,0.68); max-width: 540px;
-        margin: 1rem auto 2.75rem; line-height: 1.82;
+        margin: 1rem auto 0; line-height: 1.82;
         opacity: 0; animation: fadeUp 0.7s 0.65s ease forwards;
       }
       .hero-video-wrap {
@@ -494,6 +497,7 @@
         </a>
         <nav class="header-nav">
           <a href="/drops.html" class="nav-link">Drops</a>
+          <a href="/contact.html" class="nav-link">Contact</a>
         </nav>
       </div>
     </header>
@@ -529,6 +533,11 @@
       <p class="hero-body">
         Indoor cannabis cultivated in living soil systems — washed and pressed from our own harvests. Small-batch drops built around flavor, effect, and process. Not volume.
       </p>
+
+      <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.75rem; opacity:0; animation:fadeUp 0.7s 0.75s ease forwards;">
+        <a href="/contact.html" style="display:inline-block; padding:0.72rem 1.8rem; background:var(--crimson); color:var(--cream); font-family:var(--font-sans); font-size:0.8rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; transition:background 0.2s;">Contact Us</a>
+        <a href="/drops.html" style="display:inline-block; padding:0.72rem 1.8rem; background:transparent; color:var(--ink-soft); border:1px solid rgba(26,18,8,0.2); font-family:var(--font-sans); font-size:0.8rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; transition:background 0.2s;">View Drops</a>
+      </div>
 
       <div class="hero-video-wrap">
         <video autoplay muted loop playsinline preload="none">
