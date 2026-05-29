@@ -15,17 +15,16 @@
         fill: #900;
       }
 
+      .st5 {
+        isolation: isolate;
+      }
+
       .st2 {
         filter: url(#drop-shadow-1);
       }
 
       .st3 {
         filter: url(#drop-shadow-2);
-      }
-
-      .st5 {
-        filter: url(#drop-shadow-3);
-        isolation: isolate;
       }
 
       .st6 {
@@ -44,13 +43,6 @@
       <feGaussianBlur result="blur1" stdDeviation="1"/>
       <feFlood flood-color="#000" flood-opacity=".96"/>
       <feComposite in2="blur1" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="drop-shadow-3" x="195.96" y="307.34" width="293.18" height="254.63" filterUnits="userSpaceOnUse">
-      <feOffset dx="2" dy="1"/>
-      <feGaussianBlur result="blur2" stdDeviation="2"/>
-      <feFlood flood-color="#000" flood-opacity=".75"/>
-      <feComposite in2="blur2" operator="in"/>
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
