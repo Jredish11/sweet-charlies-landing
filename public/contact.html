@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Sweet Charlie's Drops | Colorado Living Soil Cannabis</title>
-    <meta name="description" content="Current flower and solventless drops from Sweet Charlie's. Find participating Colorado retailers and drop details." />
-    <link rel="canonical" href="https://sweetcharliesco.com/drops.html" />
+    <title>Contact | Sweet Charlie's Living Soil Cannabis</title>
+    <meta name="description" content="Retail partnership and B2B inquiries for Sweet Charlie's Living Soil Cannabis. Colorado MED-licensed cultivator and solventless rosin producer." />
+    <link rel="canonical" href="https://sweetcharliesco.com/contact.html" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,151 +151,120 @@
       .page-sub {
         font-family: var(--font-serif); font-style: italic;
         font-size: clamp(0.95rem, 1.6vw, 1.075rem);
-        color: rgba(26,18,8,0.62); max-width: 480px;
+        color: rgba(26,18,8,0.62); max-width: 520px;
         margin: 0 auto; line-height: 1.8;
         opacity: 0; animation: fadeUp 0.7s 0.4s ease forwards;
       }
 
-      /* Main content */
       main { flex: 1; }
 
-      /* Coming soon section */
-      .coming-soon {
-        padding: 6rem 1.5rem;
-        text-align: center;
-        max-width: 680px;
-        margin: 0 auto;
-      }
-      .coming-soon-badge {
-        display: inline-block; font-size: 0.62rem; font-weight: 600;
-        letter-spacing: 0.26em; text-transform: uppercase;
-        color: var(--crimson);
-        border: 1px solid rgba(170,47,37,0.28);
-        padding: 0.28rem 0.9rem; margin-bottom: 2rem;
-      }
-      .coming-soon-heading {
-        font-family: var(--font-display);
-        font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700;
-        color: var(--ink); line-height: 1.1; margin-bottom: 1rem;
-      }
-      .coming-soon-body {
-        font-family: var(--font-serif); font-style: italic;
-        font-size: 1rem; color: rgba(26,18,8,0.62);
-        line-height: 1.8; margin-bottom: 2.5rem;
+      /* Contact layout */
+      .contact-wrap {
+        max-width: 1100px; margin: 0 auto;
+        padding: 5rem 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 5rem;
+        align-items: start;
       }
 
-      /* Drop card (commented out / ready to use) */
-      .drops-grid {
-        max-width: 1100px; margin: 0 auto;
-        padding: 4rem 1.5rem;
-        display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 1.5rem;
+      /* Left column */
+      .contact-info { }
+      .contact-section { margin-bottom: 3rem; }
+      .contact-section-label {
+        font-size: 0.6rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+        color: var(--crimson); margin-bottom: 0.75rem;
       }
-      .drop-card {
-        background: #fff;
+      .contact-section-title {
+        font-family: var(--font-display);
+        font-size: 1.4rem; font-weight: 700;
+        color: var(--ink); line-height: 1.2; margin-bottom: 0.75rem;
+      }
+      .contact-section-body {
+        font-family: var(--font-serif); font-style: italic;
+        font-size: 0.9rem; color: rgba(26,18,8,0.65);
+        line-height: 1.8;
+      }
+      .contact-divider {
+        width: 24px; height: 1px; background: var(--gold);
+        margin: 2rem 0; position: relative;
+      }
+      .contact-divider::after { content: ''; position: absolute; top: 3px; left: 0; right: 0; height: 1px; background: rgba(196,146,42,0.3); }
+
+      .contact-direct {
+        margin-top: 2.5rem;
+        padding: 1.5rem;
         border: 1px solid var(--rule);
         outline: 1px solid var(--rule-lt);
         outline-offset: 4px;
-        padding: 2rem;
         position: relative;
-        box-shadow: var(--shadow-card);
-        transition: box-shadow 0.3s, transform 0.3s;
       }
-      .drop-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px); }
-      .drop-card::before {
-        content: ''; position: absolute; top: 8px; left: 8px;
+      .contact-direct::before {
+        content: ''; position: absolute; top: 6px; left: 6px;
         width: 8px; height: 8px;
         border-top: 1px solid var(--rule);
         border-left: 1px solid var(--rule);
       }
-      .drop-card::after {
+      .contact-direct-label {
+        font-size: 0.6rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+        color: rgba(26,18,8,0.45); margin-bottom: 0.5rem;
+      }
+      .contact-direct-email {
+        font-family: var(--font-serif);
+        font-size: 1rem; font-weight: 700;
+        color: var(--crimson);
+        word-break: break-all;
+      }
+      .contact-direct-email:hover { color: var(--crimson-l); }
+      .contact-direct-note {
+        font-size: 0.8rem; color: rgba(26,18,8,0.45);
+        margin-top: 0.4rem; font-style: italic;
+      }
+
+      /* Right column — form */
+      .contact-form-wrap {
+        background: var(--cream);
+        border: 2px solid var(--rule);
+        outline: 1px solid var(--rule-lt);
+        outline-offset: 6px;
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        position: relative;
+      }
+      .contact-form-wrap::before {
+        content: ''; position: absolute; top: 8px; left: 8px;
+        width: 10px; height: 10px;
+        border-top: 1px solid var(--rule);
+        border-left: 1px solid var(--rule);
+        z-index: 1;
+      }
+      .contact-form-wrap::after {
         content: ''; position: absolute; bottom: 8px; right: 8px;
-        width: 8px; height: 8px;
+        width: 10px; height: 10px;
         border-bottom: 1px solid var(--rule);
         border-right: 1px solid var(--rule);
+        z-index: 1;
       }
-      .drop-type {
-        font-size: 0.62rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
-        color: var(--crimson); margin-bottom: 0.5rem;
+      .contact-form-header {
+        padding: 1.5rem 1.75rem 0;
       }
-      .drop-name {
+      .contact-form-title {
         font-family: var(--font-display);
-        font-size: 1.5rem; font-weight: 700;
-        color: var(--ink); margin-bottom: 0.25rem; line-height: 1.15;
+        font-size: 1.2rem; font-weight: 700;
+        color: var(--ink); margin-bottom: 0.25rem;
       }
-      .drop-batch {
-        font-family: var(--font-serif); font-style: italic;
-        font-size: 0.875rem; color: rgba(26,18,8,0.55);
-        margin-bottom: 1.25rem;
+      .contact-form-sub {
+        font-size: 0.8rem; color: rgba(26,18,8,0.5);
+        font-style: italic; margin-bottom: 0;
       }
-      .drop-divider { width: 24px; height: 1px; background: var(--gold); margin-bottom: 1.25rem; }
-      .drop-meta {
-        display: grid; grid-template-columns: 1fr 1fr;
-        gap: 0.75rem; margin-bottom: 1.5rem;
+      .contact-form-divider {
+        width: 24px; height: 1px; background: var(--gold);
+        margin: 1rem 1.75rem; position: relative;
       }
-      .drop-meta-item { }
-      .drop-meta-label {
-        font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-        color: rgba(26,18,8,0.4); margin-bottom: 0.2rem;
+      .contact-form-wrap iframe {
+        width: 100%; border: 0; background: transparent;
+        min-height: 520px; display: block;
       }
-      .drop-meta-value {
-        font-size: 0.875rem; font-weight: 500; color: var(--ink-soft);
-      }
-      .drop-notes {
-        font-family: var(--font-serif); font-style: italic;
-        font-size: 0.875rem; color: rgba(26,18,8,0.65);
-        line-height: 1.7; border-top: 1px solid var(--rule-lt);
-        padding-top: 1rem;
-      }
-
-      /* Retailers section */
-      .retailers {
-        background: var(--ink-soft);
-        padding: 5rem 1.5rem;
-      }
-      .retailers-inner { max-width: 1100px; margin: 0 auto; }
-      .retailers-header { text-align: center; margin-bottom: 3rem; }
-      .retailers-eyebrow {
-        font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-        color: var(--gold); margin-bottom: 0.75rem;
-      }
-      .retailers-title {
-        font-family: var(--font-display);
-        font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700;
-        color: var(--cream); line-height: 1.15;
-      }
-      .retailers-grid {
-        display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 1.5px;
-        background: rgba(245,236,216,0.05);
-        border: 1px solid rgba(245,236,216,0.08);
-      }
-      .retailer-item {
-        background: rgba(26,18,8,0.55);
-        padding: 1.75rem 1.5rem;
-        transition: background 0.3s;
-      }
-      .retailer-item:hover { background: rgba(26,18,8,0.38); }
-      .retailer-name {
-        font-family: var(--font-serif); font-weight: 700;
-        font-size: 1rem; color: var(--cream); margin-bottom: 0.25rem;
-      }
-      .retailer-location {
-        font-size: 0.8rem; color: rgba(245,236,216,0.5);
-        letter-spacing: 0.05em; margin-bottom: 0.5rem;
-      }
-      .retailer-note {
-        font-size: 0.8rem; color: rgba(245,236,216,0.4);
-        font-style: italic;
-      }
-
-      /* Map */
-      .map-wrap {
-        max-width: 1100px; margin: 2.5rem auto 0;
-        border: 1px solid rgba(245,236,216,0.08);
-        overflow: hidden;
-      }
-      .map-wrap iframe { width: 100%; height: 480px; display: block; border: 0; }
 
       /* Footer */
       footer {
@@ -320,8 +289,8 @@
       .footer-ig svg { width: 18px; height: 18px; }
       .footer-copy { font-size: 0.72rem; letter-spacing: 0.05em; border-top: 1px solid rgba(245,236,216,0.06); padding-top: 1.5rem; }
 
-      @media (max-width: 640px) {
-        .drop-meta { grid-template-columns: 1fr; }
+      @media (max-width: 860px) {
+        .contact-wrap { grid-template-columns: 1fr; gap: 3rem; }
       }
 
       @keyframes fadeUp {
@@ -345,7 +314,8 @@
         </a>
         <nav class="header-nav">
           <a href="/" class="nav-link">Home</a>
-          <a href="/drops.html" class="nav-link active">Drops</a>
+          <a href="/drops.html" class="nav-link">Drops</a>
+          <a href="/contact.html" class="nav-link active">Contact</a>
         </nav>
       </div>
     </header>
@@ -359,106 +329,82 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
-      <p class="page-eyebrow">Small Batch &nbsp;·&nbsp; Single-Source &nbsp;·&nbsp; Colorado</p>
-      <h1 class="page-title">Current Drops</h1>
+      <p class="page-eyebrow">Retail &nbsp;·&nbsp; Wholesale &nbsp;·&nbsp; B2B</p>
+      <h1 class="page-title">Work With Us</h1>
       <div class="page-rule"></div>
-      <p class="page-sub">Flower and solventless rosin drops — updated each release. Find what's available and where to get it.</p>
+      <p class="page-sub">Retail partnerships, solventless supply, creative collabs, events — if there's something worth building together, we want to hear from you.</p>
     </section>
 
     <main>
+      <div class="contact-wrap">
 
-      <!-- Coming Soon State — remove this section once drops are live -->
-      <div class="coming-soon reveal">
-        <span class="coming-soon-badge">Drop Info</span>
-        <h2 class="coming-soon-heading">First drops coming<br>late 2026.</h2>
-        <p class="coming-soon-body">
-          We're currently in our buildout. Follow us on Instagram to stay
-          up to date on our first drops — strain announcements, release dates,
-          and participating retailers will all hit there first.
-        </p>
-        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
-          <a href="https://www.instagram.com/sweetcharliesco" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items: center; gap: 0.5rem; padding: 0.72rem 1.8rem; background: var(--crimson); color: var(--cream); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:16px;height:16px;" aria-hidden="true"><path fill="currentColor" d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM7.75 3.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5ZM12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7Zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm5.25-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0Z"/></svg>
-            Follow @sweetcharliesco
-          </a>
-          <a href="/" style="display:inline-block; padding: 0.72rem 1.8rem; background: transparent; color: var(--ink-soft); border: 1px solid rgba(26,18,8,0.2); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s;">
-            Back to Home
-          </a>
+        <!-- Left: info -->
+        <div class="contact-info reveal">
+
+          <div class="contact-section">
+            <p class="contact-section-label">Retail Partners</p>
+            <h2 class="contact-section-title">Independent dispensaries &amp; boutique retail.</h2>
+            <p class="contact-section-body">
+              We're building relationships with independent Colorado retailers who care about
+              what's on their shelves. If you're looking for a consistent living soil cultivar
+              with a story behind it, let's talk.
+            </p>
+          </div>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-section">
+            <p class="contact-section-label">B2B &amp; Supply</p>
+            <h2 class="contact-section-title">Solventless supply for edible &amp; MIP kitchens.</h2>
+            <p class="contact-section-body">
+              We produce single-source solventless rosin from our own living soil garden.
+              If you're an edible kitchen or MIP operator looking for a clean, traceable
+              solventless input, reach out. We're open to ongoing supply conversations.
+            </p>
+          </div>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-section">
+            <p class="contact-section-label">Creative &amp; Community</p>
+            <h2 class="contact-section-title">Collabs, events &amp; everything else.</h2>
+            <p class="contact-section-body">
+              Photographers, brands, event organizers, artists — if you think there's
+              something worth building together, we're open to it. We're a small team
+              with a lot of range. Drop us a line and let's figure it out.
+            </p>
+          </div>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-direct">
+            <p class="contact-direct-label">Direct Email</p>
+            <a href="mailto:jeff@sweetcharliesco.com" class="contact-direct-email">jeff@sweetcharliesco.com</a>
+            <p class="contact-direct-note">We'll get back to you within a couple business days.</p>
+          </div>
+
         </div>
+
+        <!-- Right: form -->
+        <div class="contact-form-wrap reveal">
+          <div class="contact-form-header">
+            <p class="contact-form-title">Send us a message</p>
+            <p class="contact-form-sub">Tell us about your store, kitchen, or what you're looking for.</p>
+          </div>
+          <div class="contact-form-divider"></div>
+          <!-- Replace YOUR_TALLY_FORM_ID with your Tally form ID once created -->
+          <!-- To set up: go to tally.so, create a new form, add fields for:
+               Name / Company / Inquiry type (Retail Partner / B2B Supply / Creative Collab / Event / Other) / Message / Email
+               Then in Settings > Notifications add jeff@sweetcharliesco.com as email recipient
+               Grab the embed ID from Share > Embed (looks like w5Pp5E) and replace below -->
+          <iframe
+            data-tally-src="https://tally.so/embed/javlQJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            title="Sweet Charlie's Contact Form"
+          ></iframe>
+        </div>
+
       </div>
-
-      <!--
-        DROP CARDS — uncomment and fill in when drops are live.
-        Duplicate .drop-card blocks for each drop.
-
-      <div class="drops-grid">
-        <div class="drop-card reveal">
-          <p class="drop-type">Live Rosin</p>
-          <h2 class="drop-name">Strain Name</h2>
-          <p class="drop-batch">Batch 001 · Spring 2026</p>
-          <div class="drop-divider"></div>
-          <div class="drop-meta">
-            <div class="drop-meta-item">
-              <p class="drop-meta-label">Format</p>
-              <p class="drop-meta-value">1g Cold Cure</p>
-            </div>
-            <div class="drop-meta-item">
-              <p class="drop-meta-label">Release</p>
-              <p class="drop-meta-value">Week of June 2</p>
-            </div>
-            <div class="drop-meta-item">
-              <p class="drop-meta-label">Availability</p>
-              <p class="drop-meta-value">Limited</p>
-            </div>
-            <div class="drop-meta-item">
-              <p class="drop-meta-label">Region</p>
-              <p class="drop-meta-value">Colorado</p>
-            </div>
-          </div>
-          <p class="drop-notes">Tasting notes, effect profile, or anything else worth saying about this batch.</p>
-        </div>
-      </div>
-      -->
-
-      <!--
-        RETAILERS SECTION — uncomment when drops are live.
-
-      <section class="retailers reveal">
-        <div class="retailers-inner">
-          <div class="retailers-header">
-            <p class="retailers-eyebrow">Where to Find</p>
-            <h2 class="retailers-title">Participating Retailers</h2>
-          </div>
-
-          <div class="map-wrap">
-            <iframe
-              src="YOUR_GOOGLE_MY_MAPS_EMBED_URL"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Sweet Charlie's Retailers Map"
-            ></iframe>
-          </div>
-
-          <div class="retailers-grid" style="margin-top: 1.5px;">
-            <div class="retailer-item">
-              <p class="retailer-name">Retailer Name</p>
-              <p class="retailer-location">City, CO</p>
-              <p class="retailer-note">Drop day / product notes</p>
-            </div>
-            <div class="retailer-item">
-              <p class="retailer-name">Retailer Name</p>
-              <p class="retailer-location">City, CO</p>
-              <p class="retailer-note">Drop day / product notes</p>
-            </div>
-          </div>
-
-          <p style="font-size: 0.72rem; color: rgba(245,236,216,0.35); text-align: center; margin-top: 2rem;">
-            Retail availability varies. Check with the store for current inventory.
-          </p>
-        </div>
-      </section>
-      -->
-
     </main>
 
     <!-- Footer -->
@@ -478,6 +424,20 @@
         <p class="footer-copy">&copy; 2026 Sweet Charlies LLC. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var d = document, w = "https://tally.so/widgets/embed.js";
+        function v() {
+          if (typeof Tally !== "undefined") Tally.loadEmbeds();
+          else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; });
+        }
+        if (typeof Tally !== "undefined") v();
+        else if (!d.querySelector('script[src="' + w + '"]')) {
+          var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s);
+        }
+      })();
+    </script>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
