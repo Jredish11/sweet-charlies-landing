@@ -457,6 +457,11 @@
       ::-webkit-scrollbar { width: 6px; }
       ::-webkit-scrollbar-track { background: var(--ink); }
       ::-webkit-scrollbar-thumb { background: rgba(245,236,216,0.2); border-radius: 3px; }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.75); }
+      }
     </style>
   </head>
 
@@ -540,6 +545,14 @@
         <video autoplay muted loop playsinline preload="none">
           <source src="/videos/timelapse cultivation-copy.mov" type="video/mp4" />
         </video>
+      </div>
+
+      <div style="max-width: 860px; margin: 1.5rem auto 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 1s ease forwards;">
+        <div style="display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--crimson); animation: pulse 2s ease-in-out infinite;"></span>
+          <span style="font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson);">Now in Buildout</span>
+        </div>
+        <p style="font-family: var(--font-serif); font-style: italic; font-size: 0.875rem; color: rgba(26,18,8,0.6); line-height: 1.7; margin: 0; max-width: 560px;">A timelapse of our cultivation facility taking shape. Follow us on <a href="https://www.instagram.com/sweetcharliesco" target="_blank" rel="noopener noreferrer" style="color: var(--crimson); text-decoration: underline; text-underline-offset: 3px;">@sweetcharliesco</a> for construction updates, our launch date, and more.</p>
       </div>
     </section>
 
