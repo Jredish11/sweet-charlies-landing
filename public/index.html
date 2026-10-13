@@ -34,8 +34,7 @@
     <!-- Both font sets load: Fraunces/Libre Baskerville for the current look, DynaPuff for the new one -->
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DynaPuff:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
-<link rel="icon" type="image/svg+xml" href="/images/Shapes-05%20(1).svg" />
-<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/images/Shapes-05%20(1).svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
@@ -179,6 +178,7 @@
       .deco-float { animation: float 7s ease-in-out infinite; animation-delay: var(--fd, 0s); }
       @media (max-width: 640px) {
         .deco-shape { --s: 0.5; }
+        .deco-extra { display: none; }
       }
 
       /* Age Gate (shows the CURRENT look) */
@@ -322,11 +322,48 @@
         transition: opacity 0.9s ease, transform 0.9s ease;
       }
       .hero-wordmark.visible { opacity: 1; transform: translateY(0); }
-      .hero-wordmark img {
+      .logo-split {
+        position: relative;
         width: clamp(280px, 60vw, 760px);
-        height: auto;
         margin: 0 auto;
+        container-type: inline-size;
       }
+      .logo-split img { width: 100%; height: auto; }
+
+      /* "Under Construction" panel that sweeps over the left half of the logo */
+      .construction-panel {
+        position: absolute; top: 0; bottom: 0; left: 0; width: 50%;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        background: var(--teal);
+        border-right: 4px solid var(--gold);
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 1.2s cubic-bezier(.7,0,.3,1);
+        overflow: hidden;
+      }
+      .construction-panel::before,
+      .construction-panel::after {
+        content: ''; position: absolute; left: 0; right: 0; height: 12%;
+        background: repeating-linear-gradient(-45deg, var(--gold) 0 12px, var(--ink-soft) 12px 24px);
+      }
+      .construction-panel::before { top: 0; }
+      .construction-panel::after  { bottom: 0; }
+      .construction-text {
+        font-family: 'DynaPuff', cursive; font-weight: 600;
+        font-size: clamp(0.9rem, 7.5cqw, 3.4rem);
+        line-height: 1.05; color: var(--cream); text-align: center;
+        opacity: 0; transform: translateY(8px);
+        transition: opacity 0.6s ease 0.9s, transform 0.6s ease 0.9s;
+      }
+      .construction-sub {
+        margin-top: 0.6em;
+        font-size: clamp(0.5rem, 2.2cqw, 0.8rem); font-weight: 600;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: var(--gold-l);
+        opacity: 0; transition: opacity 0.6s ease 1.2s;
+      }
+      body.split .construction-panel { clip-path: inset(0 0 0 0); }
+      body.split .construction-text { opacity: 1; transform: none; }
+      body.split .construction-sub { opacity: 1; }
 
       .hero-divider {
         display: flex; align-items: center; gap: 0.7rem;
@@ -588,14 +625,15 @@
         .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         .gallery-grid .gallery-item:first-child { grid-column: span 2; }
         .pillars-grid { grid-template-columns: 1fr; }
-        .hero-wordmark img { width: clamp(240px, 80vw, 480px); }
+        .logo-split { width: clamp(240px, 80vw, 480px); }
         .footer-logo img { height: 200px; }
         .header-nav { gap: 0.75rem; }
       }
 
       /* Reduced motion: skip the show, land on the new look */
       @media (prefers-reduced-motion: reduce) {
-        body, .deco-shape, .pattern-band::before, .t-display, .t-serif { transition: none !important; }
+        body, .deco-shape, .pattern-band::before, .t-display, .t-serif,
+        .construction-panel, .construction-text, .construction-sub { transition: none !important; }
         .deco-float { animation: none; }
       }
 
@@ -671,15 +709,27 @@
     <!-- Hero -->
     <section class="hero">
       <img class="deco-shape deco-float" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
-         style="width:68px; top:28px; left:24px; --r:-10deg; --d:0.1s;" />
+           style="width:68px; top:28px; left:24px; --r:-10deg; --d:0.1s;" />
       <img class="deco-shape deco-float" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
            style="width:96px; bottom:14px; right:3%; --r:6deg; --d:0.35s; --fd:-2s;" />
       <img class="deco-shape deco-float" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
            style="width:52px; top:40px; right:8%; --d:0.2s; --fd:-4s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-02%20(1).svg" alt="" aria-hidden="true"
+           style="width:90px; top:58%; left:3%; --r:14deg; --d:0.45s; --fd:-5s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-01%20(1).svg" alt="" aria-hidden="true"
+           style="width:76px; top:68%; right:3%; --r:-12deg; --d:0.55s; --fd:-3s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
+           style="width:48px; bottom:12%; left:6%; --r:20deg; --d:0.6s; --fd:-6s;" />
 
       <div id="bigLogo" class="hero-wordmark">
         <!-- Current wordmark stays until the new logo vectors are final -->
-        <img src="/images/sweet-charlies-logo-website.svg" alt="Sweet Charlie's Living Soil Cannabis" loading="eager" decoding="async" />
+        <div class="logo-split">
+          <img src="/images/sweet-charlies-logo-website.svg" alt="Sweet Charlie's Living Soil Cannabis" loading="eager" decoding="async" />
+          <div class="construction-panel" aria-hidden="true">
+            <span class="construction-text">Under<br>Construction</span>
+            <span class="construction-sub">New look coming</span>
+          </div>
+        </div>
       </div>
 
       <!-- Email CTA -->
@@ -690,6 +740,8 @@
              style="width:84px; bottom:12px; left:5%; --r:-8deg; --d:0.65s; --fd:-3s;" />
         <img class="deco-shape deco-float" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
              style="width:44px; top:26px; left:7%; --r:-22deg; --d:0.4s; --fd:-5s;" />
+        <img class="deco-shape deco-float deco-extra" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
+             style="width:72px; bottom:20px; right:5%; --r:10deg; --d:0.7s; --fd:-2s;" />
         <span class="cta-label reveal">Early Access</span>
         <h2 class="cta-heading t-display reveal">Be first to know<br>about new drops.</h2>
         <p class="cta-sub t-serif reveal">Flower drops and solventless rosin releases — straight to your inbox, before anyone else.</p>
@@ -768,7 +820,11 @@
     <!-- Pillars -->
     <section class="pillars">
       <img class="deco-shape deco-float" src="/images/Shapes-02%20(1).svg" alt="" aria-hidden="true"
-           style="width:104px; bottom:-10px; right:-10px; --r:-10deg; --d:0.8s; --fd:-2s;" />
+           style="width:104px; bottom:28px; right:3%; --r:-10deg; --d:0.8s; --fd:-2s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
+           style="width:50px; top:30px; right:6%; --d:0.85s; --fd:-4s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-01%20(1).svg" alt="" aria-hidden="true"
+           style="width:80px; bottom:30px; left:3%; --r:12deg; --d:0.95s; --fd:-1s;" />
       <img class="deco-shape deco-float" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
            style="width:46px; top:22px; left:4%; --r:14deg; --d:0.9s; --fd:-6s;" />
       <div class="pillars-grid reveal">
@@ -824,11 +880,15 @@
            style="width:60px; top:22px; right:4%; --r:16deg; --d:1s; --fd:-3s;" />
       <img class="deco-shape deco-float" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
            style="width:54px; bottom:16px; left:3%; --d:1.1s; --fd:-5s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
+           style="width:70px; top:24px; left:4%; --r:-8deg; --d:1.05s; --fd:-2s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-02%20(1).svg" alt="" aria-hidden="true"
+           style="width:78px; bottom:14px; right:3%; --r:8deg; --d:1.15s; --fd:-4s;" />
       <div class="gallery-header reveal">
         <p class="section-eyebrow">Cultivation Buildout Progress</p>
         <h2 class="section-title t-display">Built With Intention.</h2>
       </div>
-        <div class="gallery-grid reveal">
+      <div class="gallery-grid reveal">
         <div class="gallery-item"><img src="/images/IMG_0057.jpg"          alt="Flower room build progress"                  loading="lazy" decoding="async" /></div>
         <div class="gallery-item"><img src="/images/IMG_0055.jpg"          alt="Flower room build progress"                  loading="lazy" decoding="async" /></div>
         <div class="gallery-item"><img src="/images/GPTempDownload 2.JPG"  alt="Flower room build"                           loading="lazy" decoding="async" /></div>
@@ -846,7 +906,11 @@
     <!-- Footer -->
     <footer>
       <img class="deco-shape deco-float" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
-        style="width:58px; top:18px; right:6%; --r:-16deg; --d:1.2s; --fd:-1s;" />
+           style="width:58px; top:18px; right:6%; --r:-16deg; --d:1.2s; --fd:-1s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
+           style="width:46px; top:40px; left:6%; --d:1.25s; --fd:-3s;" />
+      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
+           style="width:42px; bottom:30px; right:8%; --r:24deg; --d:1.3s; --fd:-5s;" />
       <div class="footer-inner">
         <div class="footer-logo">
           <img src="/images/sweet_charlies_sc_secondary_iblack weed2.svg" alt="Sweet Charlie's" loading="lazy" decoding="async" />
@@ -899,6 +963,7 @@
         const transform = () => {
           if (reduceMotion) {
             body.classList.remove('era-old');
+            body.classList.add('split');
             return;
           }
           body.classList.add('morph-wipe');   // red stripes wipe off the pattern bands
@@ -907,6 +972,7 @@
             body.classList.remove('era-old'); // colors glide, fonts swap, shapes pop in
           }, 450);
           setTimeout(() => body.classList.remove('morphing'), 650);
+          setTimeout(() => body.classList.add('split'), 2900); // logo splits after the colors settle
         };
 
         const tryPlay  = () => { if (!audio) return; audio.volume = 0.2; audio.play().catch(() => {}); };
