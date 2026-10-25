@@ -25,113 +25,52 @@
       "@type": "Organization",
       "name": "Sweet Charlie's Living Soil Cannabis",
       "url": "https://sweetcharliesco.com/",
+      "logo": "https://sweetcharliesco.com/images/brand/logo-main.svg",
       "sameAs": ["https://www.instagram.com/sweetcharlies.co/"]
     }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Both font sets load: Fraunces/Libre Baskerville for the current look, DynaPuff for the new one -->
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DynaPuff:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/svg+xml" href="/images/Shapes-05%20(1).svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/brand/charlie-face.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <style>
       /* ============================================================
-         TRANSFORMATION SETUP
-         The page loads in the CURRENT brand look (body.era-old).
-         After the age gate, JS removes .era-old and the colors
-         glide into the NEW palette. Registering the color variables
-         with @property is what lets them animate smoothly.
+         BRAND PALETTE (Magda's official colors)
          ============================================================ */
-      @property --cream      { syntax: '<color>'; inherits: true; initial-value: #FBF3E6; }
-      @property --cream-2    { syntax: '<color>'; inherits: true; initial-value: #F5E6C6; }
-      @property --parchment  { syntax: '<color>'; inherits: true; initial-value: #E9D7AC; }
-      @property --ink-soft   { syntax: '<color>'; inherits: true; initial-value: #2B140A; }
-      @property --crimson    { syntax: '<color>'; inherits: true; initial-value: #A6032F; }
-      @property --crimson-l  { syntax: '<color>'; inherits: true; initial-value: #C23A56; }
-      @property --soil       { syntax: '<color>'; inherits: true; initial-value: #40160D; }
-      @property --gold       { syntax: '<color>'; inherits: true; initial-value: #E8B93F; }
-      @property --gold-l     { syntax: '<color>'; inherits: true; initial-value: #F2D377; }
-      @property --accent     { syntax: '<color>'; inherits: true; initial-value: #E8B93F; }
-      @property --status     { syntax: '<color>'; inherits: true; initial-value: #D63E25; }
-      @property --strip-bg   { syntax: '<color>'; inherits: true; initial-value: #027373; }
-      @property --strip-text { syntax: '<color>'; inherits: true; initial-value: rgba(251,243,230,0.85); }
-      @property --footer-bg  { syntax: '<color>'; inherits: true; initial-value: #2B140A; }
-
       :root {
-        /* NEW palette (end state) */
-        --cream:      #FBF3E6;
-        --cream-2:    #F5E6C6;
-        --parchment:  #E9D7AC;
-        --ink:        #000000;
-        --ink-soft:   #2B140A;
-        --crimson:    #A6032F;
-        --crimson-l:  #C23A56;
-        --soil:       #40160D;
-        --gold:       #E8B93F;
-        --gold-l:     #F2D377;
-        --accent:     #E8B93F;
-        --status:     #D63E25;
-        --strip-bg:   #027373;
-        --strip-text: rgba(251,243,230,0.85);
-        --footer-bg:  #2B140A;
-        --teal:       #027373;
-        --teal-l:     #53A69D;
-        --navy:       #192E59;
-        --blue:       #418FBF;
-        --pink:       #C65D86;
-        --orange:     #D63E25;
-        --brown:      #7E4536;
+        /* from the Sweet Charlie's Final brand sheet */
+        --crimson:  #A6032F;
+        --pink:     #C65D86;
+        --gold:     #F2D377;
+        --orange:   #D63E25;
+        --teal-l:   #53A69D;
+        --teal:     #027373;
+        --blue:     #418FBF;
+        --navy:     #192E59;
+        --brown:    #7E4536;
+        --soil:     #40160D;
 
-        --font-sans:  'DM Sans', sans-serif;
+        /* light page backgrounds: soft tints of the brand gold */
+        --cream:    #fcf7e8;
+        --cream-2:  #f9edc9;
 
-        --rule:    rgba(43,20,10,0.16);
-        --rule-lt: rgba(43,20,10,0.07);
+        --ink:      var(--soil);
+        --ink-60:   rgba(64,22,13,0.68);
+        --rule:     rgba(64,22,13,0.16);
+        --rule-lt:  rgba(64,22,13,0.07);
+        --on-dark:  rgba(252,247,232,0.62);
 
-        --shadow-card: 0 2px 24px rgba(43,20,10,0.10), 0 1px 4px rgba(43,20,10,0.08);
-        --shadow-lift: 0 8px 40px rgba(43,20,10,0.16), 0 2px 8px rgba(43,20,10,0.10);
+        --font-display: 'DynaPuff', cursive;
+        --font-sans:    'DM Sans', sans-serif;
 
-        --morph: 2.4s;
+        --shadow-card: 0 2px 24px rgba(64,22,13,0.10), 0 1px 4px rgba(64,22,13,0.08);
+        --shadow-lift: 0 8px 40px rgba(64,22,13,0.18), 0 2px 8px rgba(64,22,13,0.10);
       }
-
-      /* CURRENT palette (start state) */
-      body.era-old {
-        --cream:      #FCF3EA;
-        --cream-2:    #EDE0C4;
-        --parchment:  #E8D6B0;
-        --ink-soft:   #2E2010;
-        --crimson:    #aa2f25;
-        --crimson-l:  #c43a2e;
-        --soil:       #3A2618;
-        --gold:       #C4922A;
-        --gold-l:     #D4A84A;
-        --accent:     #aa2f25;
-        --status:     #aa2f25;
-        --strip-bg:   #E8D6B0;
-        --strip-text: rgba(26,18,8,0.5);
-        --footer-bg:  #000000;
-      }
-
-      body {
-        transition:
-          --cream var(--morph) ease, --cream-2 var(--morph) ease, --parchment var(--morph) ease,
-          --ink-soft var(--morph) ease, --crimson var(--morph) ease, --crimson-l var(--morph) ease,
-          --soil var(--morph) ease, --gold var(--morph) ease, --gold-l var(--morph) ease,
-          --accent var(--morph) ease, --status var(--morph) ease, --strip-bg var(--morph) ease,
-          --strip-text var(--morph) ease, --footer-bg var(--morph) ease;
-      }
-
-      /* Display type: classic serif → DynaPuff, swapped mid-blur */
-      .t-display { font-family: 'DynaPuff', cursive; }
-      .t-serif   { font-family: 'DM Sans', sans-serif; }
-      body.era-old .t-display { font-family: 'Fraunces', serif; }
-      body.era-old .t-serif   { font-family: 'Libre Baskerville', serif; }
-      body.era-old .hero-headline em { font-style: italic; font-weight: 400; }
-      .t-display, .t-serif { transition: filter 0.45s ease, opacity 0.45s ease; }
-      body.morphing .t-display, body.morphing .t-serif { filter: blur(6px); opacity: 0.35; }
 
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       html { scroll-behavior: smooth; }
@@ -145,7 +84,9 @@
       }
       img, video { display: block; max-width: 100%; }
       a { color: inherit; text-decoration: none; }
+      .t-display { font-family: var(--font-display); }
 
+      /* paper grain */
       body::before {
         content: '';
         position: fixed; inset: 0;
@@ -162,416 +103,322 @@
       }
       .reveal.visible { opacity: 1; transform: translateY(0); }
 
-      /* Decorative brand shapes: hidden in the old look, pop in during the morph */
-      .deco-shape {
+      /* ============================================================
+         FLOATING BRAND SHAPES
+         Each section pops its shapes in when it scrolls into view.
+         ============================================================ */
+      .shapes { position: relative; overflow: hidden; }
+      .deco {
         position: absolute; pointer-events: none; z-index: 1;
-        height: auto;
+        width: var(--w, 60px); height: auto;
         --r: 0deg; --s: 1;
-        transform: rotate(var(--r)) scale(var(--s));
-        transition: opacity 0.6s ease, transform 0.9s cubic-bezier(.34,1.56,.64,1);
-        transition-delay: var(--d, 0s);
-      }
-      body.era-old .deco-shape {
         opacity: 0;
-        transform: rotate(calc(var(--r) - 90deg)) scale(0);
+        transform: rotate(calc(var(--r) - 70deg)) scale(0);
+        transition: opacity 0.5s ease, transform 0.9s cubic-bezier(.34,1.56,.64,1);
+        transition-delay: var(--d, 0s);
+        animation: float 7s ease-in-out infinite;
+        animation-delay: var(--fd, 0s);
       }
-      .deco-float { animation: float 7s ease-in-out infinite; animation-delay: var(--fd, 0s); }
+      .in > .deco { opacity: 1; transform: rotate(var(--r)) scale(var(--s)); }
+      @media (max-width: 900px) { .deco { --s: 0.7; } }
       @media (max-width: 640px) {
-        .deco-shape { --s: 0.5; }
-        .deco-extra { display: none; }
+        .deco { --s: 0.5; }
+        .deco.x { display: none; }
       }
 
-      /* Age Gate (shows the CURRENT look) */
+      /* ============================================================
+         AGE GATE
+         ============================================================ */
       #ageGate {
         position: fixed; inset: 0; z-index: 9999;
-        background: #000;
+        background: var(--soil);
         display: flex; align-items: center; justify-content: center;
         padding: 1rem;
       }
       #ageGate::before {
         content: ''; position: absolute; inset: 0;
         background:
-          radial-gradient(ellipse 60% 60% at 20% 80%, rgba(170,47,37,0.15) 0%, transparent 70%),
-          radial-gradient(ellipse 50% 50% at 80% 20%, rgba(61,74,46,0.12) 0%, transparent 70%);
+          radial-gradient(ellipse 60% 60% at 20% 80%, rgba(2,115,115,0.35) 0%, transparent 70%),
+          radial-gradient(ellipse 50% 50% at 80% 20%, rgba(166,3,47,0.30) 0%, transparent 70%);
         pointer-events: none;
       }
       .age-card {
         position: relative;
         background: var(--cream);
-        border: 2px solid rgba(26,18,8,0.18);
-        outline: 1px solid rgba(26,18,8,0.07);
-        outline-offset: 6px;
-        padding: 2.5rem 2rem;
+        border: 3px solid var(--gold);
+        border-radius: 18px;
+        padding: 2.25rem 2rem 2.5rem;
         max-width: 420px; width: 100%;
         text-align: center;
         box-shadow: var(--shadow-lift);
       }
+      .age-face { width: 96px; margin: 0 auto 1rem; }
       .age-eyebrow {
-        font-family: var(--font-sans); font-size: 0.62rem; font-weight: 600;
+        font-size: 0.62rem; font-weight: 700;
         letter-spacing: 0.28em; text-transform: uppercase;
-        color: var(--crimson); margin-bottom: 0.75rem;
+        color: var(--teal); margin-bottom: 0.75rem;
       }
       .age-heading {
-        font-size: 2.4rem; font-weight: 700;
+        font-size: 2.3rem; font-weight: 600;
         color: var(--ink); line-height: 1.1; margin-bottom: 0.6rem;
       }
       .age-sub {
-        font-style: italic;
-        font-size: 0.875rem; color: rgba(26,18,8,0.6);
-        margin-bottom: 2rem; line-height: 1.5;
-      }
-      .age-divider {
-        width: 40px; height: 1px; background: var(--gold);
-        margin: 0 auto 1.5rem; position: relative;
-      }
-      .age-divider::after {
-        content: ''; position: absolute; top: 3px; left: 0; right: 0;
-        height: 1px; background: rgba(196,146,42,0.3);
+        font-size: 0.9rem; color: var(--ink-60);
+        margin-bottom: 1.75rem; line-height: 1.5;
       }
       .age-btns { display: flex; gap: 0.75rem; justify-content: center; }
-      .btn-enter {
-        padding: 0.72rem 1.6rem; background: var(--crimson); color: var(--cream);
-        border: none; font-family: var(--font-sans); font-size: 0.8rem;
-        font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      .btn-enter, .btn-leave {
+        padding: 0.75rem 1.6rem; border-radius: 999px;
+        font-family: var(--font-sans); font-size: 0.8rem;
+        font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
         cursor: pointer; transition: background 0.2s, transform 0.15s;
       }
-      .btn-enter:hover { background: var(--crimson-l); transform: translateY(-1px); }
-      .btn-leave {
-        padding: 0.72rem 1.6rem; background: transparent; color: var(--ink);
-        border: 1px solid rgba(26,18,8,0.2); font-family: var(--font-sans);
-        font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase;
-        cursor: pointer; transition: background 0.2s;
-      }
-      .btn-leave:hover { background: rgba(26,18,8,0.05); }
+      .btn-enter { background: var(--crimson); color: var(--cream); border: none; }
+      .btn-enter:hover { background: var(--orange); transform: translateY(-1px); }
+      .btn-leave { background: transparent; color: var(--ink); border: 2px solid var(--rule); }
+      .btn-leave:hover { background: var(--rule-lt); }
       .agegate-hidden { opacity: 0; pointer-events: none; transition: opacity 300ms ease; }
 
-      /* Pattern bands: new teal/orange pattern underneath, old red stripes on top that fade away */
+      /* ============================================================
+         PATTERN BANDS (Magda's pattern)
+         ============================================================ */
       .pattern-band {
-        position: relative;
         background-color: var(--cream);
-        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2090%20100%22%3E%0A%3Cpath%20d%3D%22M22%2012%20L68%2088%22%20stroke%3D%22%2353A69D%22%20stroke-width%3D%2216%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%3Ccircle%20cx%3D%2222%22%20cy%3D%2212%22%20r%3D%229%22%20fill%3D%22%23D63E25%22/%3E%0A%3Ccircle%20cx%3D%2268%22%20cy%3D%2288%22%20r%3D%229%22%20fill%3D%22%23D63E25%22/%3E%0A%3C/svg%3E");
+        background-image: url("/images/brand/pattern.svg");
         background-repeat: repeat-x;
-        background-size: auto 100%;
+        background-position: left center;
+        background-size: auto 78%;
       }
-      .pattern-band::before {
-        content: ''; position: absolute; inset: 0; pointer-events: none;
-        background: repeating-linear-gradient(90deg, #aa2f25 0px, #aa2f25 32px, #fdf3ea 32px, #fdf3ea 64px);
-        opacity: 0;
-        clip-path: inset(0 0 0 0);
-        transition: opacity 0.4s ease, clip-path var(--morph) cubic-bezier(.7,0,.3,1);
-      }
-      body.era-old .pattern-band::before { opacity: 1; }
-      /* wipe the stripes away left-to-right */
-      body.morph-wipe .pattern-band::before { opacity: 1; clip-path: inset(0 0 0 100%); }
 
       /* Header */
       header {
         position: sticky; top: 0; z-index: 40;
         border-bottom: 3px solid var(--gold);
-        box-shadow: 0 2px 12px rgba(43,20,10,0.18);
-        transition: border-color var(--morph) ease;
+        box-shadow: 0 2px 12px rgba(64,22,13,0.16);
       }
-      body.era-old header { border-bottom-color: rgba(26,18,8,0.2); }
       .header-inner {
-        position: relative; z-index: 1;
         width: 100%;
-        padding: 0 1.5rem; height: 90px;
+        padding: 0 1.5rem; height: 84px;
         display: flex; align-items: center; justify-content: space-between;
       }
-      .header-logo img { height: 76px; width: auto; }
-      .header-nav { display: flex; align-items: center; gap: 2rem; }
+      .header-logo {
+        display: flex; align-items: center;
+        background: var(--cream);
+        border-radius: 14px;
+        padding: 6px 12px;
+        opacity: 0; transform: translateY(-6px);
+        pointer-events: none;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+      .header-logo img { height: 58px; width: auto; }
+      body.scrolled .header-logo { opacity: 1; transform: none; pointer-events: auto; }
+      .header-nav { display: flex; align-items: center; gap: 0.75rem; margin-left: auto; }
       .nav-link {
         font-size: 0.72rem; font-weight: 700;
         letter-spacing: 0.2em; text-transform: uppercase;
-        color: var(--ink-soft);
+        color: var(--ink);
         background: var(--cream);
-        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        padding: 0.4rem 0.95rem;
         transition: background 0.2s, color 0.2s;
       }
-      .nav-link:hover { background: var(--ink-soft); color: var(--cream); }
+      .nav-link:hover { background: var(--teal); color: var(--cream); }
 
       /* Banner */
       .launch-banner {
-        background: var(--parchment); color: var(--ink-soft);
+        background: var(--teal); color: var(--cream);
         text-align: center; padding: 0.75rem 1rem;
-        font-family: var(--font-sans); font-size: 0.68rem;
-        font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
-        border-bottom: 1px solid rgba(43,20,10,0.12);
+        font-size: 0.68rem;
+        font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
       }
-      .launch-banner span.dot { color: var(--crimson); margin: 0 0.75rem; }
+      .launch-banner span.dot { color: var(--gold); margin: 0 0.75rem; }
 
-      /* Hero */
+      /* ============================================================
+         HERO
+         ============================================================ */
       .hero {
         background: var(--cream);
-        padding: 5rem 1.5rem 5rem;
-        text-align: center; position: relative; overflow: hidden;
+        padding: 4rem 1.5rem 5rem;
+        text-align: center;
       }
       .hero::before {
-        content: ''; position: absolute; top: -120px; left: 50%;
+        content: ''; position: absolute; top: -140px; left: 50%;
         transform: translateX(-50%);
-        width: 800px; height: 800px; border-radius: 50%;
-        background: radial-gradient(ellipse, rgba(2,115,115,0.08) 0%, transparent 65%);
+        width: 900px; height: 900px; border-radius: 50%;
+        background: radial-gradient(ellipse, rgba(242,211,119,0.45) 0%, transparent 62%);
         pointer-events: none;
-        transition: opacity var(--morph) ease;
       }
-      body.era-old .hero::before { opacity: 0; }
-      .hero-wordmark {
+      .hero-logo {
         position: relative; z-index: 2;
-        margin: 0 auto 2.5rem;
-        opacity: 0; transform: translateY(16px);
-        transition: opacity 0.9s ease, transform 0.9s ease;
+        width: clamp(260px, 56vw, 700px);
+        margin: 0 auto 3rem;
+        opacity: 0; transform: translateY(16px) scale(0.96);
+        transition: opacity 0.9s ease, transform 0.9s cubic-bezier(.34,1.56,.64,1);
       }
-      .hero-wordmark.visible { opacity: 1; transform: translateY(0); }
-      .logo-split {
-        position: relative;
-        width: clamp(280px, 60vw, 760px);
-        margin: 0 auto;
-        container-type: inline-size;
-      }
-      .logo-split img { width: 100%; height: auto; }
+      .hero-logo.visible { opacity: 1; transform: none; }
+      .hero-logo img { width: 100%; height: auto; }
 
-      /* "Under Construction" panel that sweeps over the left half of the logo */
-      .construction-panel {
-        position: absolute; top: 0; bottom: 0; left: 0; width: 50%;
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
-        background: var(--teal);
-        border-right: 4px solid var(--gold);
-        clip-path: inset(0 100% 0 0);
-        transition: clip-path 1.2s cubic-bezier(.7,0,.3,1);
-        overflow: hidden;
-      }
-      .construction-panel::before,
-      .construction-panel::after {
-        content: ''; position: absolute; left: 0; right: 0; height: 12%;
-        background: repeating-linear-gradient(-45deg, var(--gold) 0 12px, var(--ink-soft) 12px 24px);
-      }
-      .construction-panel::before { top: 0; }
-      .construction-panel::after  { bottom: 0; }
-      .construction-text {
-        font-family: 'DynaPuff', cursive; font-weight: 600;
-        font-size: clamp(0.9rem, 7.5cqw, 3.4rem);
-        line-height: 1.05; color: var(--cream); text-align: center;
-        opacity: 0; transform: translateY(8px);
-        transition: opacity 0.6s ease 0.9s, transform 0.6s ease 0.9s;
-      }
-      .construction-sub {
-        margin-top: 0.6em;
-        font-size: clamp(0.5rem, 2.2cqw, 0.8rem); font-weight: 600;
-        letter-spacing: 0.22em; text-transform: uppercase;
-        color: var(--gold-l);
-        opacity: 0; transition: opacity 0.6s ease 1.2s;
-      }
-      body.split .construction-panel { clip-path: inset(0 0 0 0); }
-      body.split .construction-text { opacity: 1; transform: none; }
-      body.split .construction-sub { opacity: 1; }
-
+      .gem { width: 16px; height: auto; flex-shrink: 0; }
       .hero-divider {
-        display: flex; align-items: center; gap: 0.7rem;
-        max-width: 320px; margin: 0 auto 1.1rem;
-        opacity: 0; animation: fadeUp 0.6s 0.28s ease forwards;
+        display: flex; align-items: center; gap: 0.8rem;
+        max-width: 320px; margin: 3.5rem auto 1.1rem;
+        position: relative; z-index: 2;
       }
-      .hero-divider-line { flex: 1; height: 1px; background: var(--rule); position: relative; }
-      .hero-divider-line::after { content: ''; position: absolute; top: 3px; left: 0; right: 0; height: 1px; background: var(--rule-lt); }
-      .hero-divider-gem { font-size: 0.5rem; color: var(--gold); flex-shrink: 0; }
+      .hero-divider-line { flex: 1; height: 2px; border-radius: 2px; background: var(--rule); }
 
       .hero-eyebrow {
-        font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-        color: var(--accent); margin-bottom: 1.25rem;
-        opacity: 0; animation: fadeUp 0.7s 0.3s ease forwards;
+        position: relative; z-index: 2;
+        font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+        color: var(--teal); margin-bottom: 1.25rem;
       }
       .hero-headline {
-        font-size: clamp(1.9rem, 4.8vw, 4rem); font-weight: 600;
-        color: var(--ink-soft); line-height: 1.12; letter-spacing: -0.005em;
+        position: relative; z-index: 2;
+        font-size: clamp(1.9rem, 4.8vw, 3.8rem); font-weight: 600;
+        color: var(--ink); line-height: 1.14;
         max-width: 800px; margin: 0 auto 1rem;
-        opacity: 0; animation: fadeUp 0.7s 0.45s ease forwards;
       }
       .hero-headline em { font-style: normal; font-weight: 500; color: var(--crimson); }
-      .hero-rule {
-        width: 40px; height: 1px; background: var(--gold);
-        margin: 1.25rem auto 0.25rem; position: relative;
-        opacity: 0; animation: fadeUp 0.7s 0.55s ease forwards;
-      }
-      .hero-rule::after { content: ''; position: absolute; top: 3px; left: 0; right: 0; height: 1px; background: rgba(232,185,63,0.3); }
       .hero-body {
-        font-style: italic;
+        position: relative; z-index: 2;
         font-size: clamp(0.95rem, 1.6vw, 1.075rem);
-        color: rgba(43,20,10,0.68); max-width: 540px;
-        margin: 1rem auto 0; line-height: 1.82;
-        opacity: 0; animation: fadeUp 0.7s 0.65s ease forwards;
+        color: var(--ink-60); max-width: 540px;
+        margin: 1.25rem auto 0; line-height: 1.82;
       }
       .hero-ctas {
+        position: relative; z-index: 2;
         display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
         margin: 2rem 0 2.75rem;
-        opacity: 0; animation: fadeUp 0.7s 0.75s ease forwards;
       }
       .btn-primary, .btn-ghost {
-        display: inline-block; padding: 0.72rem 1.8rem;
-        font-family: var(--font-sans); font-size: 0.8rem;
-        letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s;
+        display: inline-block; padding: 0.8rem 1.9rem; border-radius: 999px;
+        font-size: 0.8rem; font-weight: 700;
+        letter-spacing: 0.1em; text-transform: uppercase;
+        transition: background 0.2s, color 0.2s, transform 0.15s;
       }
-      .btn-primary { background: var(--crimson); color: var(--cream); font-weight: 600; }
-      .btn-primary:hover { background: var(--crimson-l); }
-      .btn-ghost { color: var(--ink-soft); border: 1px solid rgba(43,20,10,0.2); font-weight: 500; }
-      .btn-ghost:hover { background: rgba(43,20,10,0.05); }
+      .btn-primary { background: var(--crimson); color: var(--cream); }
+      .btn-primary:hover { background: var(--orange); transform: translateY(-1px); }
+      .btn-ghost { color: var(--ink); border: 2px solid var(--ink); }
+      .btn-ghost:hover { background: var(--ink); color: var(--cream); }
 
       .hero-video-wrap {
+        position: relative; z-index: 2;
         max-width: 860px; margin: 0 auto;
-        border: 2px solid var(--rule);
-        outline: 1px solid var(--rule-lt);
-        outline-offset: 6px;
-        overflow: hidden; position: relative;
-        opacity: 0; animation: fadeUp 0.9s 0.8s ease forwards;
+        border: 3px solid var(--gold);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lift);
+        background: var(--soil);
       }
       .hero-video-wrap video { width: 100%; display: block; }
-      .hero-video-wrap::after {
-        content: ''; position: absolute; inset: 0;
-        box-shadow: inset 0 0 60px rgba(43,20,10,0.15);
-        pointer-events: none;
-      }
       .hero-status {
+        position: relative; z-index: 2;
         max-width: 860px; margin: 1.5rem auto 0;
         display: flex; align-items: flex-start; justify-content: space-between;
         gap: 1.5rem; flex-wrap: wrap; text-align: left;
-        opacity: 0; animation: fadeUp 0.7s 1s ease forwards;
       }
       .status-pill { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
       .status-dot {
-        display: inline-block; width: 8px; height: 8px; border-radius: 50%;
-        background: var(--status); animation: pulse 2s ease-in-out infinite;
+        display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+        background: var(--orange); animation: pulse 2s ease-in-out infinite;
       }
       .status-label {
-        font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em;
-        text-transform: uppercase; color: var(--status);
+        font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em;
+        text-transform: uppercase; color: var(--orange);
       }
       .status-text {
-        font-style: italic; font-size: 0.875rem;
-        color: rgba(43,20,10,0.6); line-height: 1.7; margin: 0; max-width: 560px;
+        font-size: 0.9rem; color: var(--ink-60);
+        line-height: 1.7; margin: 0; max-width: 560px;
       }
-      .status-text a { color: var(--crimson); text-decoration: underline; text-underline-offset: 3px; }
-
-      .band-divider {
-        width: 100%; height: 44px;
-        border-top: 3px solid rgba(43,20,10,0.2);
-        border-bottom: 3px solid rgba(43,20,10,0.2);
-      }
-
-      /* Marquee */
-      .process-strip {
-        background: var(--strip-bg);
-        border-top: 2px solid var(--rule);
-        border-bottom: 2px solid var(--rule);
-        padding: 1rem 0; overflow: hidden;
-      }
-      .process-track {
-        display: flex; gap: 2.5rem; align-items: center;
-        white-space: nowrap;
-        animation: marquee 26s linear infinite;
-        width: max-content;
-      }
-      .process-item {
-        font-size: 0.68rem; font-weight: 600;
-        letter-spacing: 0.24em; text-transform: uppercase;
-        color: var(--strip-text); flex-shrink: 0;
-      }
-      .process-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold-l); flex-shrink: 0; }
+      .status-text a { color: var(--crimson); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
       /* Email CTA */
       .cta-section {
         background: var(--cream-2);
-        padding: 5rem 1.5rem; text-align: center;
-        border-top: 2px solid var(--rule);
-        position: relative; overflow: hidden;
+        border-radius: 28px;
+        max-width: 1100px; margin: 0 auto;
+        padding: 4.5rem 1.5rem; text-align: center;
+        z-index: 2;
       }
-      .cta-section::before {
-        content: ''; position: absolute; bottom: -200px; left: 50%;
-        transform: translateX(-50%);
-        width: 700px; height: 700px; border-radius: 50%;
-        background: radial-gradient(ellipse, rgba(166,3,47,0.06) 0%, transparent 65%);
-        pointer-events: none;
-      }
+      .cta-section > *:not(.deco) { position: relative; z-index: 2; }
       .cta-label {
-        position: relative; z-index: 2;
-        display: inline-block; font-size: 0.62rem; font-weight: 600;
+        display: inline-block; font-size: 0.65rem; font-weight: 700;
         letter-spacing: 0.26em; text-transform: uppercase;
-        color: var(--accent);
-        border: 1px solid var(--accent);
-        padding: 0.28rem 0.9rem; margin-bottom: 1.5rem;
+        color: var(--cream); background: var(--teal);
+        border-radius: 999px;
+        padding: 0.35rem 1rem; margin-bottom: 1.5rem;
       }
       .cta-heading {
-        position: relative; z-index: 2;
-        font-size: clamp(1.7rem, 3.6vw, 3rem); font-weight: 600;
-        color: var(--ink-soft); line-height: 1.14; margin-bottom: 0.875rem;
+        font-size: clamp(1.7rem, 3.6vw, 2.8rem); font-weight: 600;
+        color: var(--ink); line-height: 1.14; margin-bottom: 0.875rem;
         max-width: 520px; margin-left: auto; margin-right: auto;
       }
       .cta-sub {
-        position: relative; z-index: 2;
-        font-style: italic;
-        font-size: 0.9375rem; color: rgba(43,20,10,0.6);
-        max-width: 400px; margin: 0 auto 2.5rem; line-height: 1.7;
+        font-size: 0.95rem; color: var(--ink-60);
+        max-width: 400px; margin: 0 auto 2.25rem; line-height: 1.7;
       }
       .cta-form-wrap {
-        position: relative; z-index: 2;
         max-width: 560px; margin: 0 auto;
         background: var(--cream);
-        border: 2px solid var(--rule);
-        outline: 1px solid var(--rule-lt);
-        outline-offset: 5px;
+        border: 3px solid var(--gold);
+        border-radius: 18px;
         overflow: hidden; box-shadow: var(--shadow-card);
       }
       .cta-form-wrap iframe { width: 100%; border: 0; background: transparent; min-height: 260px; display: block; }
 
-      /* Pillars */
-      .pillars {
-        background: var(--ink-soft);
-        padding: 5rem 1.5rem; position: relative; overflow: hidden;
+      .band-divider { width: 100%; height: 48px; }
+
+      /* Marquee */
+      .process-strip {
+        background: var(--teal);
+        padding: 1rem 0; overflow: hidden;
       }
-      .pillars::before {
-        content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(251,243,230,0.1), transparent);
+      .process-track {
+        display: flex; gap: 2rem; align-items: center;
+        white-space: nowrap;
+        animation: marquee 30s linear infinite;
+        width: max-content;
       }
+      .process-item {
+        font-size: 0.7rem; font-weight: 700;
+        letter-spacing: 0.24em; text-transform: uppercase;
+        color: var(--cream); flex-shrink: 0;
+      }
+      .process-shape { height: 18px; width: auto; flex-shrink: 0; }
+
+      /* ============================================================
+         PILLARS
+         ============================================================ */
+      .pillars { background: var(--soil); padding: 5.5rem 1.5rem; }
       .pillars-grid {
         position: relative; z-index: 2;
         max-width: 1100px; margin: 0 auto;
         display: grid; grid-template-columns: repeat(2, 1fr);
-        gap: 1.5px;
-        background: rgba(251,243,230,0.05);
-        border: 1px solid rgba(251,243,230,0.08);
-        overflow: hidden;
+        gap: 14px;
       }
       .pillar {
-        background: rgba(43,20,10,0.55);
-        padding: 2.5rem 2rem; position: relative;
-        transition: background 0.3s;
+        background: rgba(252,247,232,0.06);
+        border: 2px solid rgba(242,211,119,0.18);
+        border-radius: 20px;
+        padding: 2.25rem 2rem;
+        transition: background 0.3s, border-color 0.3s, transform 0.3s;
       }
-      .pillar:hover { background: rgba(43,20,10,0.38); }
-      .pillar::before {
-        content: ''; position: absolute; top: 10px; left: 10px;
-        width: 10px; height: 10px;
-        border-top: 1px solid rgba(251,243,230,0.12);
-        border-left: 1px solid rgba(251,243,230,0.12);
-      }
-      .pillar::after {
-        content: ''; position: absolute; bottom: 10px; right: 10px;
-        width: 10px; height: 10px;
-        border-bottom: 1px solid rgba(251,243,230,0.12);
-        border-right: 1px solid rgba(251,243,230,0.12);
-      }
-      .pillar-num { font-weight: 500; font-size: 0.75rem; color: var(--gold-l); margin-bottom: 0.5rem; }
-      body.era-old .pillar-num { font-style: italic; }
-      .pillar-icon { width: 32px; height: 32px; margin-bottom: 1rem; color: var(--gold-l); }
-      .pillar-title { font-size: 1.05rem; font-weight: 600; color: var(--cream); margin-bottom: 0.5rem; }
-      .pillar-rule { width: 24px; height: 1px; background: var(--crimson); margin-bottom: 0.85rem; position: relative; }
-      .pillar-rule::after { content: ''; position: absolute; top: 3px; left: 0; right: 0; height: 1px; background: rgba(166,3,47,0.3); }
-      .pillar-body { font-size: 0.875rem; color: rgba(251,243,230,0.55); line-height: 1.75; font-weight: 300; }
+      .pillar:hover { background: rgba(252,247,232,0.1); border-color: var(--gold); transform: translateY(-3px); }
+      .pillar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+      .pillar-num { font-weight: 500; font-size: 0.8rem; color: var(--gold); }
+      .pillar-icon { height: 44px; width: auto; }
+      .pillar-title { font-size: 1.15rem; font-weight: 600; color: var(--cream); margin-bottom: 0.6rem; }
+      .pillar-rule { width: 28px; height: 3px; border-radius: 3px; background: var(--orange); margin-bottom: 0.9rem; }
+      .pillar-body { font-size: 0.9rem; color: var(--on-dark); line-height: 1.75; }
 
-      /* Gallery */
-      .gallery { background: var(--soil); padding: 4rem 1.5rem 5rem; position: relative; overflow: hidden; }
+      /* ============================================================
+         GALLERY
+         ============================================================ */
+      .gallery { background: var(--navy); padding: 4.5rem 1.5rem 5.5rem; }
       .gallery-header { position: relative; z-index: 2; text-align: center; margin-bottom: 2.5rem; }
       .section-eyebrow {
-        font-size: 0.62rem; font-weight: 600;
+        font-size: 0.65rem; font-weight: 700;
         letter-spacing: 0.3em; text-transform: uppercase;
-        color: var(--gold-l); margin-bottom: 0.75rem;
+        color: var(--gold); margin-bottom: 0.75rem;
       }
       .section-title {
         font-size: clamp(1.6rem, 3.4vw, 2.6rem);
@@ -581,86 +428,70 @@
         position: relative; z-index: 2;
         max-width: 1200px; margin: 0 auto;
         display: grid; grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        border: 2px solid rgba(251,243,230,0.07);
-        padding: 6px;
+        gap: 10px;
       }
       .gallery-grid .gallery-item:first-child { grid-column: span 2; }
-      .gallery-item { overflow: hidden; position: relative; }
+      .gallery-item { overflow: hidden; border-radius: 14px; background: rgba(252,247,232,0.06); }
       .gallery-item img {
         width: 100%; height: 100%; object-fit: cover; min-height: 220px;
-        filter: brightness(0.9) saturate(1.08) sepia(0.04);
-        transition: transform 0.6s ease, filter 0.4s ease;
+        transition: transform 0.6s ease;
       }
-      .gallery-item:hover img { transform: scale(1.04); filter: brightness(0.98) saturate(1.12) sepia(0); }
+      .gallery-item:hover img { transform: scale(1.04); }
 
-      /* Footer */
+      /* ============================================================
+         FOOTER
+         ============================================================ */
       footer {
-        background: var(--footer-bg); color: rgba(251,243,230,0.5);
-        padding: 3rem 1.5rem 2.5rem; text-align: center;
-        border-top: 2px solid rgba(251,243,230,0.06);
-        position: relative; overflow: hidden;
+        background: var(--cream-2); color: var(--ink-60);
+        padding: 3.5rem 1.5rem 2.5rem; text-align: center;
+        border-top: 3px solid var(--gold);
       }
       .footer-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
-      .footer-logo { margin: 0 auto 1.75rem; }
-      .footer-logo img { height: 300px; width: auto; margin: 0 auto; opacity: 0.7; }
+      .footer-face { margin: 0 auto 1.75rem; width: clamp(150px, 22vw, 230px); transition: transform 0.4s cubic-bezier(.34,1.56,.64,1); }
+      .footer-face:hover { transform: rotate(-6deg) scale(1.05); }
+      .footer-face img { width: 100%; height: auto; }
       .footer-ornament {
         display: flex; align-items: center; gap: 0.75rem;
-        max-width: 160px; margin: 0 auto 1.75rem;
+        max-width: 180px; margin: 0 auto 1.5rem;
       }
-      .footer-ornament-line { flex: 1; height: 1px; background: rgba(251,243,230,0.1); }
-      .footer-ornament-gem { font-size: 0.5rem; color: var(--gold-l); opacity: 0.6; }
+      .footer-ornament-line { flex: 1; height: 2px; border-radius: 2px; background: var(--rule); }
       .footer-ig {
         display: inline-flex; align-items: center; gap: 0.5rem;
-        font-size: 0.8125rem; font-weight: 400;
-        color: rgba(251,243,230,0.55); transition: color 0.2s;
+        font-size: 0.875rem; font-weight: 600;
+        color: var(--ink); transition: color 0.2s;
         margin-bottom: 2rem;
       }
-      .footer-ig:hover { color: var(--cream); }
+      .footer-ig:hover { color: var(--crimson); }
       .footer-ig svg { width: 18px; height: 18px; }
-      .footer-copy { font-size: 0.72rem; letter-spacing: 0.05em; border-top: 1px solid rgba(251,243,230,0.06); padding-top: 1.5rem; }
+      .footer-copy { font-size: 0.72rem; letter-spacing: 0.05em; border-top: 2px solid var(--rule-lt); padding-top: 1.5rem; }
 
       /* Responsive */
       @media (max-width: 640px) {
         .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-        .gallery-grid .gallery-item:first-child { grid-column: span 2; }
         .pillars-grid { grid-template-columns: 1fr; }
-        .logo-split { width: clamp(240px, 80vw, 480px); }
-        .footer-logo img { height: 200px; }
-        .header-nav { gap: 0.75rem; }
+        .header-inner { height: 72px; padding: 0 1rem; }
+        .header-logo img { height: 44px; }
+        .nav-link { padding: 0.35rem 0.7rem; letter-spacing: 0.14em; }
+        .cta-section { border-radius: 20px; padding: 3.5rem 1.25rem; }
       }
 
-      /* Reduced motion: skip the show, land on the new look */
       @media (prefers-reduced-motion: reduce) {
-        body, .deco-shape, .pattern-band::before, .t-display, .t-serif,
-        .construction-panel, .construction-text, .construction-sub { transition: none !important; }
-        .deco-float { animation: none; }
+        .deco { animation: none; transition: none; opacity: 1; transform: rotate(var(--r)) scale(var(--s)); }
+        .hero-logo, .reveal { transition: none; }
+        .process-track { animation: none; }
       }
 
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(12px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes marquee {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
-      }
-      @keyframes float {
-        0%, 100% { translate: 0 0; }
-        50%      { translate: 0 -8px; }
-      }
-      @keyframes pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.4; transform: scale(0.75); }
-      }
+      @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      @keyframes float   { 0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+      @keyframes pulse   { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.75); } }
 
       ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: var(--ink-soft); }
-      ::-webkit-scrollbar-thumb { background: rgba(251,243,230,0.2); border-radius: 3px; }
+      ::-webkit-scrollbar-track { background: var(--soil); }
+      ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
     </style>
   </head>
 
-  <body class="era-old">
+  <body>
 
     <audio id="bgAudio" preload="none">
       <source src="/audio/because1.mid.mp3" type="audio/mpeg">
@@ -669,20 +500,20 @@
     <!-- Age Gate -->
     <div id="ageGate" role="dialog" aria-modal="true" aria-label="Age Verification">
       <div class="age-card">
-        <p class="age-eyebrow">Sweet Charlie's — Colorado</p>
+        <img class="age-face" src="/images/brand/charlie-face.svg" alt="" aria-hidden="true" />
+        <p class="age-eyebrow">Sweet Charlie's · Colorado</p>
         <h2 class="age-heading t-display">Are you 21<br>or older?</h2>
-        <div class="age-divider"></div>
-        <p class="age-sub t-serif">You must be of legal age to enter this site.</p>
+        <p class="age-sub">You must be of legal age to enter this site.</p>
         <div class="age-btns">
-          <button id="ageYes" type="button" class="btn-enter">Yes — Enter</button>
+          <button id="ageYes" type="button" class="btn-enter">Yes, Enter</button>
           <button id="ageNo"  type="button" class="btn-leave">No</button>
         </div>
       </div>
       <div id="ageGateNope" class="age-card" style="display:none;">
         <h3 class="age-heading t-display" style="margin-bottom:0.5rem;">Oy vey!</h3>
-        <p class="age-sub t-serif">You're too young to visit this site.</p>
-        <img src="https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif" alt="Too young" loading="eager" referrerpolicy="no-referrer" style="width:100%;max-width:260px;margin:1rem auto 1.5rem;" />
-        <a href="https://www.google.com" rel="nofollow" style="display:inline-block;padding:0.72rem 1.5rem;background:#000;color:var(--cream);font-family:var(--font-sans);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Leave Site</a>
+        <p class="age-sub">You're too young to visit this site.</p>
+        <img src="https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif" alt="Too young" loading="eager" referrerpolicy="no-referrer" style="width:100%;max-width:260px;margin:1rem auto 1.5rem;border-radius:12px;" />
+        <a href="https://www.google.com" rel="nofollow" class="btn-enter" style="display:inline-block;">Leave Site</a>
       </div>
     </div>
 
@@ -690,7 +521,7 @@
     <header class="pattern-band">
       <div class="header-inner">
         <a href="/" class="header-logo" aria-label="Sweet Charlie's home">
-          <!-- New logo goes here once final vectors are ready -->
+          <img src="/images/brand/logo-text.svg" alt="Sweet Charlie's" />
         </a>
         <nav class="header-nav">
           <a href="/drops.html" class="nav-link">Drops</a>
@@ -702,90 +533,85 @@
     <!-- Banner -->
     <div class="launch-banner" role="banner">
       Colorado Recreational Market
-      <span class="dot" aria-hidden="true">·</span>
+      <span class="dot" aria-hidden="true">●</span>
       <span style="white-space: nowrap;">First Drop Early 2027</span>
     </div>
 
     <!-- Hero -->
-    <section class="hero">
-      <img class="deco-shape deco-float" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
-           style="width:68px; top:28px; left:24px; --r:-10deg; --d:0.1s;" />
-      <img class="deco-shape deco-float" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
-           style="width:96px; bottom:14px; right:3%; --r:6deg; --d:0.35s; --fd:-2s;" />
-      <img class="deco-shape deco-float" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
-           style="width:52px; top:40px; right:8%; --d:0.2s; --fd:-4s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-02%20(1).svg" alt="" aria-hidden="true"
-           style="width:90px; top:58%; left:3%; --r:14deg; --d:0.45s; --fd:-5s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-01%20(1).svg" alt="" aria-hidden="true"
-           style="width:76px; top:68%; right:3%; --r:-12deg; --d:0.55s; --fd:-3s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
-           style="width:48px; bottom:12%; left:6%; --r:20deg; --d:0.6s; --fd:-6s;" />
+    <section class="hero shapes" id="hero">
+      <!-- around the logo -->
+      <img class="deco"   src="/images/brand/shape-10.svg" alt="" aria-hidden="true" style="--w:110px; top:40px;  left:4%;  --r:-12deg; --d:.10s; --fd:-1s;" />
+      <img class="deco"   src="/images/brand/shape-08.svg" alt="" aria-hidden="true" style="--w:46px;  top:70px;  left:20%; --r:18deg;  --d:.20s; --fd:-3s;" />
+      <img class="deco"   src="/images/brand/shape-11.svg" alt="" aria-hidden="true" style="--w:96px;  top:36px;  right:5%; --r:8deg;   --d:.15s; --fd:-5s;" />
+      <img class="deco x" src="/images/brand/shape-12.svg" alt="" aria-hidden="true" style="--w:42px;  top:120px; right:21%; --d:.30s; --fd:-2s;" />
+      <img class="deco x" src="/images/brand/shape-07.svg" alt="" aria-hidden="true" style="--w:40px;  top:300px; left:9%;  --r:24deg;  --d:.35s; --fd:-4s;" />
+      <img class="deco x" src="/images/brand/shape-03.svg" alt="" aria-hidden="true" style="--w:62px;  top:330px; right:10%; --r:-16deg; --d:.40s; --fd:-6s;" />
+      <!-- down the sides -->
+      <img class="deco"   src="/images/brand/shape-02.svg" alt="" aria-hidden="true" style="--w:72px;  top:52%; left:2%;  --r:14deg;  --d:.45s; --fd:-2s;" />
+      <img class="deco x" src="/images/brand/shape-09.svg" alt="" aria-hidden="true" style="--w:92px;  top:57%; right:3%; --r:-10deg; --d:.50s; --fd:-4s;" />
+      <img class="deco x" src="/images/brand/shape-05.svg" alt="" aria-hidden="true" style="--w:54px;  top:64%; left:7%;  --r:-20deg; --d:.55s; --fd:-1s;" />
+      <img class="deco x" src="/images/brand/shape-06.svg" alt="" aria-hidden="true" style="--w:34px;  top:69%; right:9%; --r:30deg;  --d:.60s; --fd:-3s;" />
+      <img class="deco x" src="/images/brand/shape-04.svg" alt="" aria-hidden="true" style="--w:50px;  top:76%; left:3%;  --r:-8deg;  --d:.65s; --fd:-5s;" />
+      <img class="deco x" src="/images/brand/shape-01.svg" alt="" aria-hidden="true" style="--w:78px;  top:81%; right:2%; --r:12deg;  --d:.70s; --fd:-2s;" />
+      <img class="deco x" src="/images/brand/shape-12.svg" alt="" aria-hidden="true" style="--w:36px;  top:88%; left:8%;  --d:.75s; --fd:-6s;" />
+      <img class="deco"   src="/images/brand/shape-07.svg" alt="" aria-hidden="true" style="--w:44px;  bottom:40px; right:7%; --r:-28deg; --d:.80s; --fd:-4s;" />
+      <img class="deco x" src="/images/brand/shape-08.svg" alt="" aria-hidden="true" style="--w:40px;  bottom:24px; left:16%; --r:-14deg; --d:.85s; --fd:-1s;" />
 
-      <div id="bigLogo" class="hero-wordmark">
-        <!-- Current wordmark stays until the new logo vectors are final -->
-        <div class="logo-split">
-          <img src="/images/sweet-charlies-logo-website.svg" alt="Sweet Charlie's Living Soil Cannabis" loading="eager" decoding="async" />
-          <div class="construction-panel" aria-hidden="true">
-            <span class="construction-text">Under<br>Construction</span>
-            <span class="construction-sub">New look coming</span>
-          </div>
-        </div>
+      <div id="bigLogo" class="hero-logo">
+        <img src="/images/brand/logo-main.svg" alt="Sweet Charlie's Living Soil Cannabis" loading="eager" decoding="async" />
       </div>
 
       <!-- Email CTA -->
-      <section class="cta-section">
-        <img class="deco-shape deco-float" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
-             style="width:66px; top:20px; right:6%; --d:0.5s; --fd:-1s;" />
-        <img class="deco-shape deco-float" src="/images/Shapes-01%20(1).svg" alt="" aria-hidden="true"
-             style="width:84px; bottom:12px; left:5%; --r:-8deg; --d:0.65s; --fd:-3s;" />
-        <img class="deco-shape deco-float" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
-             style="width:44px; top:26px; left:7%; --r:-22deg; --d:0.4s; --fd:-5s;" />
-        <img class="deco-shape deco-float deco-extra" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
-             style="width:72px; bottom:20px; right:5%; --r:10deg; --d:0.7s; --fd:-2s;" />
+      <section class="cta-section shapes" id="signup">
+        <img class="deco"   src="/images/brand/shape-03.svg" alt="" aria-hidden="true" style="--w:64px; top:22px;  left:5%;  --r:-14deg; --d:.10s; --fd:-1s;" />
+        <img class="deco"   src="/images/brand/shape-05.svg" alt="" aria-hidden="true" style="--w:58px; top:26px;  right:6%; --r:10deg;  --d:.20s; --fd:-3s;" />
+        <img class="deco x" src="/images/brand/shape-12.svg" alt="" aria-hidden="true" style="--w:34px; top:46%;  left:3%;  --d:.30s; --fd:-5s;" />
+        <img class="deco x" src="/images/brand/shape-08.svg" alt="" aria-hidden="true" style="--w:40px; top:42%;  right:4%; --r:22deg;  --d:.35s; --fd:-2s;" />
+        <img class="deco"   src="/images/brand/shape-10.svg" alt="" aria-hidden="true" style="--w:86px; bottom:18px; left:4%; --r:16deg;  --d:.40s; --fd:-4s;" />
+        <img class="deco x" src="/images/brand/shape-01.svg" alt="" aria-hidden="true" style="--w:70px; bottom:22px; right:5%; --r:-8deg; --d:.50s; --fd:-6s;" />
         <span class="cta-label reveal">Early Access</span>
         <h2 class="cta-heading t-display reveal">Be first to know<br>about new drops.</h2>
-        <p class="cta-sub t-serif reveal">Flower drops and solventless rosin releases — straight to your inbox, before anyone else.</p>
+        <p class="cta-sub reveal">Flower drops and solventless rosin releases, straight to your inbox before anyone else.</p>
         <div class="cta-form-wrap reveal">
           <iframe data-tally-src="https://tally.so/embed/w5Pp5E?alignLeft=0&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" title="Sweet Charlie's Email Sign-Up"></iframe>
         </div>
       </section>
 
-      <div class="hero-divider" aria-hidden="true">
+      <div class="hero-divider reveal" aria-hidden="true">
         <div class="hero-divider-line"></div>
-        <span class="hero-divider-gem">◆</span>
+        <img class="gem" src="/images/brand/shape-12.svg" alt="" />
         <div class="hero-divider-line"></div>
       </div>
 
-      <p class="hero-eyebrow">Living Soil &nbsp;·&nbsp; Indoor &nbsp;·&nbsp; Single-Source</p>
+      <p class="hero-eyebrow reveal">Living Soil &nbsp;·&nbsp; Indoor &nbsp;·&nbsp; Single-Source</p>
 
-      <h1 class="hero-headline t-display">
+      <h1 class="hero-headline t-display reveal">
         Grown in living soil.<br>
         <em>Single-source solventless.</em>
       </h1>
 
-      <div class="hero-rule"></div>
-
-      <p class="hero-body t-serif">
+      <p class="hero-body reveal">
         Cannabis cultivated in living soil, washed and pressed in our solventless extraction facility. Small-batch drops built around flavor, effect, and process. Not volume.
       </p>
 
-      <div class="hero-ctas">
+      <div class="hero-ctas reveal">
         <a href="/contact.html" class="btn-primary">Contact Us</a>
         <a href="/drops.html" class="btn-ghost">View Drops</a>
       </div>
 
-      <div class="hero-video-wrap">
-        <video autoplay muted loop playsinline preload="none">
-          <source src="/videos/clones1.mp4" type="video/mp4" />
+      <div class="hero-video-wrap reveal">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Sweet Charlie's animation">
+          <source src="/videos/sc_animation.mp4" type="video/mp4" />
+          <source src="/videos/sc_animation.mov" type="video/mp4" />
         </video>
       </div>
 
-      <div class="hero-status">
+      <div class="hero-status reveal">
         <div class="status-pill">
           <span class="status-dot"></span>
           <span class="status-label">Cultivation is live!</span>
         </div>
-        <p class="status-text t-serif">Clones are in the building as of 10/8/26!!! Follow us on Instagram <a href="https://www.instagram.com/sweetcharlies.co" target="_blank" rel="noopener noreferrer">@sweetcharlies.co</a> for cultivation &amp; hash lab updates, our first drop date, and more.</p>
+        <p class="status-text">Clones are in the building as of 10/8/26!!! Follow us on Instagram <a href="https://www.instagram.com/sweetcharlies.co" target="_blank" rel="noopener noreferrer">@sweetcharlies.co</a> for cultivation &amp; hash lab updates, our first drop date, and more.</p>
       </div>
     </section>
 
@@ -794,78 +620,75 @@
     <!-- Marquee -->
     <div class="process-strip" aria-hidden="true">
       <div class="process-track">
-        <span class="process-item">Living Soil</span><span class="process-dot"></span>
-        <span class="process-item">No-Till Methodology</span><span class="process-dot"></span>
-        <span class="process-item">Biological Inputs</span><span class="process-dot"></span>
-        <span class="process-item">Single-Source Solventless</span><span class="process-dot"></span>
-        <span class="process-item">Owner-Operated</span><span class="process-dot"></span>
-        <span class="process-item">Small Batch Drops</span><span class="process-dot"></span>
-        <span class="process-item">Indoor Grown</span><span class="process-dot"></span>
-        <span class="process-item">Washed &amp; Pressed In-House</span><span class="process-dot"></span>
-        <span class="process-item">Locally Owned</span><span class="process-dot"></span>
-        <span class="process-item">Colorado Recreational</span><span class="process-dot"></span>
-        <span class="process-item">Living Soil</span><span class="process-dot"></span>
-        <span class="process-item">No-Till Methodology</span><span class="process-dot"></span>
-        <span class="process-item">Biological Inputs</span><span class="process-dot"></span>
-        <span class="process-item">Single-Source Solventless</span><span class="process-dot"></span>
-        <span class="process-item">Owner-Operated</span><span class="process-dot"></span>
-        <span class="process-item">Small Batch Drops</span><span class="process-dot"></span>
-        <span class="process-item">Indoor Grown</span><span class="process-dot"></span>
-        <span class="process-item">Washed &amp; Pressed In-House</span><span class="process-dot"></span>
-        <span class="process-item">Locally Owned</span><span class="process-dot"></span>
-        <span class="process-item">Colorado Recreational</span><span class="process-dot"></span>
+        <span class="process-item">Living Soil</span><img class="process-shape" src="/images/brand/shape-08.svg" alt="" />
+        <span class="process-item">No-Till Methodology</span><img class="process-shape" src="/images/brand/shape-12.svg" alt="" />
+        <span class="process-item">Biological Inputs</span><img class="process-shape" src="/images/brand/shape-04.svg" alt="" />
+        <span class="process-item">Single-Source Solventless</span><img class="process-shape" src="/images/brand/shape-07.svg" alt="" />
+        <span class="process-item">Owner-Operated</span><img class="process-shape" src="/images/brand/shape-10.svg" alt="" />
+        <span class="process-item">Small Batch Drops</span><img class="process-shape" src="/images/brand/shape-02.svg" alt="" />
+        <span class="process-item">Indoor Grown</span><img class="process-shape" src="/images/brand/shape-11.svg" alt="" />
+        <span class="process-item">Washed &amp; Pressed In-House</span><img class="process-shape" src="/images/brand/shape-09.svg" alt="" />
+        <span class="process-item">Locally Owned</span><img class="process-shape" src="/images/brand/shape-05.svg" alt="" />
+        <span class="process-item">Colorado Recreational</span><img class="process-shape" src="/images/brand/shape-08.svg" alt="" />
+        <span class="process-item">Living Soil</span><img class="process-shape" src="/images/brand/shape-08.svg" alt="" />
+        <span class="process-item">No-Till Methodology</span><img class="process-shape" src="/images/brand/shape-12.svg" alt="" />
+        <span class="process-item">Biological Inputs</span><img class="process-shape" src="/images/brand/shape-04.svg" alt="" />
+        <span class="process-item">Single-Source Solventless</span><img class="process-shape" src="/images/brand/shape-07.svg" alt="" />
+        <span class="process-item">Owner-Operated</span><img class="process-shape" src="/images/brand/shape-10.svg" alt="" />
+        <span class="process-item">Small Batch Drops</span><img class="process-shape" src="/images/brand/shape-02.svg" alt="" />
+        <span class="process-item">Indoor Grown</span><img class="process-shape" src="/images/brand/shape-11.svg" alt="" />
+        <span class="process-item">Washed &amp; Pressed In-House</span><img class="process-shape" src="/images/brand/shape-09.svg" alt="" />
+        <span class="process-item">Locally Owned</span><img class="process-shape" src="/images/brand/shape-05.svg" alt="" />
+        <span class="process-item">Colorado Recreational</span><img class="process-shape" src="/images/brand/shape-08.svg" alt="" />
       </div>
     </div>
 
     <!-- Pillars -->
-    <section class="pillars">
-      <img class="deco-shape deco-float" src="/images/Shapes-02%20(1).svg" alt="" aria-hidden="true"
-           style="width:104px; bottom:28px; right:3%; --r:-10deg; --d:0.8s; --fd:-2s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
-           style="width:50px; top:30px; right:6%; --d:0.85s; --fd:-4s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-01%20(1).svg" alt="" aria-hidden="true"
-           style="width:80px; bottom:30px; left:3%; --r:12deg; --d:0.95s; --fd:-1s;" />
-      <img class="deco-shape deco-float" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
-           style="width:46px; top:22px; left:4%; --r:14deg; --d:0.9s; --fd:-6s;" />
+    <section class="pillars shapes">
+      <img class="deco"   src="/images/brand/shape-07.svg" alt="" aria-hidden="true" style="--w:44px;  top:26px;  left:3%;  --r:18deg;  --d:.10s; --fd:-2s;" />
+      <img class="deco"   src="/images/brand/shape-02.svg" alt="" aria-hidden="true" style="--w:70px;  top:30px;  right:4%; --r:-10deg; --d:.20s; --fd:-4s;" />
+      <img class="deco x" src="/images/brand/shape-12.svg" alt="" aria-hidden="true" style="--w:36px;  top:45%;  left:1.5%; --d:.30s; --fd:-1s;" />
+      <img class="deco x" src="/images/brand/shape-08.svg" alt="" aria-hidden="true" style="--w:40px;  top:50%;  right:2%; --r:26deg;  --d:.35s; --fd:-3s;" />
+      <img class="deco"   src="/images/brand/shape-10.svg" alt="" aria-hidden="true" style="--w:96px;  bottom:24px; left:3%; --r:-14deg; --d:.40s; --fd:-5s;" />
+      <img class="deco x" src="/images/brand/shape-11.svg" alt="" aria-hidden="true" style="--w:80px;  bottom:30px; right:3%; --r:12deg; --d:.50s; --fd:-6s;" />
+      <img class="deco x" src="/images/brand/shape-05.svg" alt="" aria-hidden="true" style="--w:44px;  bottom:12px; left:48%; --r:-24deg; --d:.55s; --fd:-2s;" />
       <div class="pillars-grid reveal">
 
         <div class="pillar">
-          <p class="pillar-num t-display">No. 01</p>
-          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2C6.5 2 3 6.5 3 12s3.5 10 9 10 9-4.5 9-10S17.5 2 12 2z"/>
-            <path d="M12 6c0 3-3 5-3 8"/><path d="M12 6c0 3 3 5 3 8"/>
-            <line x1="9" y1="14" x2="15" y2="14"/>
-          </svg>
+          <div class="pillar-top">
+            <p class="pillar-num t-display">No. 01</p>
+            <img class="pillar-icon" src="/images/brand/shape-03.svg" alt="" aria-hidden="true" />
+          </div>
           <h3 class="pillar-title t-display">Living Soil · No-Till</h3>
           <div class="pillar-rule"></div>
           <p class="pillar-body">Living soil beds, no-till methodology, and biological inputs. Built for terpene expression and plant health.</p>
         </div>
 
         <div class="pillar">
-          <p class="pillar-num t-display">No. 02</p>
-          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2l7 10a7 7 0 1 1-14 0z"/>
-          </svg>
+          <div class="pillar-top">
+            <p class="pillar-num t-display">No. 02</p>
+            <img class="pillar-icon" src="/images/brand/shape-07.svg" alt="" aria-hidden="true" />
+          </div>
           <h3 class="pillar-title t-display">Single-Source Solventless</h3>
           <div class="pillar-rule"></div>
           <p class="pillar-body">Ice, water, heat, pressure. That's it. Everything we wash comes out of our own living soil garden. We don't bring in outside material. If it has the Sweet Charlie's brand, we grew it.</p>
         </div>
 
         <div class="pillar">
-          <p class="pillar-num t-display">No. 03</p>
-          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/>
-          </svg>
+          <div class="pillar-top">
+            <p class="pillar-num t-display">No. 03</p>
+            <img class="pillar-icon" src="/images/brand/shape-11.svg" alt="" aria-hidden="true" />
+          </div>
           <h3 class="pillar-title t-display">Independent Craft</h3>
           <div class="pillar-rule"></div>
           <p class="pillar-body">Owner-operated, no outside money, no corporate overhead. A team of Colorado cannabis industry vets who want to do this right.</p>
         </div>
 
         <div class="pillar">
-          <p class="pillar-num t-display">No. 04</p>
-          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2l2.09 6.26H20.5l-5.27 3.84 2.01 6.26L12 14.27l-5.24 4.09 2.01-6.26L3.5 8.26H9.91z"/>
-          </svg>
+          <div class="pillar-top">
+            <p class="pillar-num t-display">No. 04</p>
+            <img class="pillar-icon" src="/images/brand/shape-12.svg" alt="" aria-hidden="true" />
+          </div>
           <h3 class="pillar-title t-display">Small Scale. High Standards.</h3>
           <div class="pillar-rule"></div>
           <p class="pillar-body">The standard is the standard. We don't grow to market conditions, we don't chase volume, and we're not interested in the race to the bottom. Every batch either clears the bar or it doesn't get the Sweet Charlie's name on it.</p>
@@ -875,21 +698,19 @@
     </section>
 
     <!-- Gallery -->
-    <section class="gallery">
-      <img class="deco-shape deco-float" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
-           style="width:60px; top:22px; right:4%; --r:16deg; --d:1s; --fd:-3s;" />
-      <img class="deco-shape deco-float" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
-           style="width:54px; bottom:16px; left:3%; --d:1.1s; --fd:-5s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
-           style="width:70px; top:24px; left:4%; --r:-8deg; --d:1.05s; --fd:-2s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-02%20(1).svg" alt="" aria-hidden="true"
-           style="width:78px; bottom:14px; right:3%; --r:8deg; --d:1.15s; --fd:-4s;" />
+    <section class="gallery shapes">
+      <img class="deco"   src="/images/brand/shape-10.svg" alt="" aria-hidden="true" style="--w:76px; top:22px;  left:4%;  --r:10deg;  --d:.10s; --fd:-3s;" />
+      <img class="deco"   src="/images/brand/shape-07.svg" alt="" aria-hidden="true" style="--w:40px; top:30px;  right:5%; --r:-22deg; --d:.20s; --fd:-1s;" />
+      <img class="deco x" src="/images/brand/shape-08.svg" alt="" aria-hidden="true" style="--w:44px; top:40%;  left:1.5%; --r:14deg; --d:.30s; --fd:-5s;" />
+      <img class="deco x" src="/images/brand/shape-12.svg" alt="" aria-hidden="true" style="--w:38px; top:55%;  right:1.5%; --d:.35s; --fd:-2s;" />
+      <img class="deco"   src="/images/brand/shape-04.svg" alt="" aria-hidden="true" style="--w:48px; bottom:20px; left:5%; --r:-12deg; --d:.40s; --fd:-4s;" />
+      <img class="deco x" src="/images/brand/shape-03.svg" alt="" aria-hidden="true" style="--w:58px; bottom:24px; right:4%; --r:20deg; --d:.50s; --fd:-6s;" />
       <div class="gallery-header reveal">
         <p class="section-eyebrow">Cultivation Buildout Progress</p>
         <h2 class="section-title t-display">Built With Intention.</h2>
       </div>
       <div class="gallery-grid reveal">
-        <div class="gallery-item"><img src="/images/cloner.jpg"          alt="demo fr"        loading="lazy" decoding="async" /></div>
+        <div class="gallery-item"><img src="/images/cloner.jpg"          alt="Cloner"                                      loading="lazy" decoding="async" /></div>
         <div class="gallery-item"><img src="/images/IMG_9951 2.jpg"        alt="Original artwork"                            loading="lazy" decoding="async" /></div>
         <div class="gallery-item"><img src="/images/IMG_9950 2.jpg"        alt="Original artwork"                            loading="lazy" decoding="async" /></div>
         <div class="gallery-item"><img src="/images/IMG_0057.jpg"          alt="Flower room build progress"                  loading="lazy" decoding="async" /></div>
@@ -902,26 +723,28 @@
       </div>
     </section>
 
+    <div class="band-divider pattern-band" aria-hidden="true"></div>
+
     <!-- Footer -->
-    <footer>
-      <img class="deco-shape deco-float" src="/images/Shapes-03%20(1).svg" alt="" aria-hidden="true"
-           style="width:58px; top:18px; right:6%; --r:-16deg; --d:1.2s; --fd:-1s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-05%20(1).svg" alt="" aria-hidden="true"
-           style="width:46px; top:40px; left:6%; --d:1.25s; --fd:-3s;" />
-      <img class="deco-shape deco-float deco-extra" src="/images/Shapes-04%20(1).svg" alt="" aria-hidden="true"
-           style="width:42px; bottom:30px; right:8%; --r:24deg; --d:1.3s; --fd:-5s;" />
+    <footer class="shapes">
+      <img class="deco"   src="/images/brand/shape-11.svg" alt="" aria-hidden="true" style="--w:76px; top:30px;  left:6%;  --r:-12deg; --d:.10s; --fd:-2s;" />
+      <img class="deco"   src="/images/brand/shape-08.svg" alt="" aria-hidden="true" style="--w:42px; top:36px;  right:8%; --r:20deg;  --d:.20s; --fd:-4s;" />
+      <img class="deco x" src="/images/brand/shape-06.svg" alt="" aria-hidden="true" style="--w:30px; top:46%;  left:16%; --r:30deg;  --d:.30s; --fd:-1s;" />
+      <img class="deco x" src="/images/brand/shape-09.svg" alt="" aria-hidden="true" style="--w:70px; top:40%;  right:14%; --r:-8deg; --d:.35s; --fd:-3s;" />
+      <img class="deco"   src="/images/brand/shape-02.svg" alt="" aria-hidden="true" style="--w:54px; bottom:26px; left:4%; --r:12deg;  --d:.40s; --fd:-5s;" />
+      <img class="deco x" src="/images/brand/shape-07.svg" alt="" aria-hidden="true" style="--w:36px; bottom:30px; right:4%; --r:-26deg; --d:.50s; --fd:-6s;" />
       <div class="footer-inner">
-        <div class="footer-logo">
-          <img src="/images/sweet_charlies_sc_secondary_iblack weed2.svg" alt="Sweet Charlie's" loading="lazy" decoding="async" />
-        </div>
+        <a href="/" class="footer-face" aria-label="Back to top" onclick="window.scrollTo({top:0});return false;" style="display:block;">
+          <img src="/images/brand/charlie-face.svg" alt="Charlie" loading="lazy" decoding="async" />
+        </a>
         <div class="footer-ornament" aria-hidden="true">
           <div class="footer-ornament-line"></div>
-          <span class="footer-ornament-gem">✦</span>
+          <img class="gem" src="/images/brand/shape-08.svg" alt="" />
           <div class="footer-ornament-line"></div>
         </div>
         <a href="https://www.instagram.com/sweetcharlies.co" target="_blank" rel="noopener noreferrer" class="footer-ig" aria-label="Follow Sweet Charlie's on Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM7.75 3.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5ZM12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7Zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm5.25-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0Z"/>
+            <path fill="currentColor" d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM7.75 3.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.250v-8.5A4.25 4.25 0 0 1 7.75 3.5ZM12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7Zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm5.25-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0Z"/>
           </svg>
           @sweetcharlies.co
         </a>
@@ -945,10 +768,9 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const body = document.body;
-        const logo = document.getElementById('bigLogo');
-        if (logo) setTimeout(() => logo.classList.add('visible'), 80);
-
+        const body   = document.body;
+        const hero   = document.getElementById('hero');
+        const logo   = document.getElementById('bigLogo');
         const gate   = document.getElementById('ageGate');
         const prompt = gate.querySelector('.age-card');
         const nope   = document.getElementById('ageGateNope');
@@ -956,33 +778,17 @@
         const noBtn  = document.getElementById('ageNo');
         const audio  = document.getElementById('bgAudio');
 
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        // The transformation: old look → new color scheme and shapes
-        const transform = () => {
-          if (reduceMotion) {
-            body.classList.remove('era-old');
-            body.classList.add('split');
-            return;
-          }
-          body.classList.add('morph-wipe');   // red stripes wipe off the pattern bands
-          body.classList.add('morphing');     // type blurs out
-          setTimeout(() => {
-            body.classList.remove('era-old'); // colors glide, fonts swap, shapes pop in
-          }, 450);
-          setTimeout(() => body.classList.remove('morphing'), 650);
-          setTimeout(() => body.classList.add('split'), 2900); // logo splits after the colors settle
-        };
-
         const tryPlay  = () => { if (!audio) return; audio.volume = 0.2; audio.play().catch(() => {}); };
         const hideGate = () => { gate.classList.add('agegate-hidden'); setTimeout(() => gate.style.display = 'none', 310); };
 
+        // Logo and hero shapes pop in right after the age gate
+        const enter = () => {
+          setTimeout(() => logo.classList.add('visible'), 150);
+          setTimeout(() => hero.classList.add('in'), 450);
+        };
+
         gate.style.display = 'flex';
-        yesBtn.addEventListener('click', () => {
-          hideGate();
-          tryPlay();
-          setTimeout(transform, 1200); // let the visitor see the current look first
-        });
+        yesBtn.addEventListener('click', () => { hideGate(); tryPlay(); enter(); });
         noBtn.addEventListener('click',  () => { prompt.style.display = 'none'; nope.style.display = 'block'; });
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && nope.style.display === 'block') {
@@ -990,10 +796,23 @@
           }
         });
 
+        // Fade-in text blocks
         const io = new IntersectionObserver((entries) => {
           entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
         }, { threshold: 0.12 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Shapes pop in as each section scrolls into view
+        const shapeIO = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); shapeIO.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.shapes:not(#hero)').forEach(el => shapeIO.observe(el));
+
+        // Small text logo appears in the header once the big logo scrolls away
+        const logoIO = new IntersectionObserver(([e]) => {
+          body.classList.toggle('scrolled', !e.isIntersecting);
+        }, { rootMargin: '-90px 0px 0px 0px' });
+        logoIO.observe(logo);
       });
     </script>
 
