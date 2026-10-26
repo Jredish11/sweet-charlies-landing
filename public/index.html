@@ -309,7 +309,8 @@
         box-shadow: var(--shadow-lift);
         background: var(--soil);
       }
-      .hero-video-wrap video { width: 100%; display: block; }
+      .hero-video-wrap { width: fit-content; }
+      .hero-video-wrap video { display: block; width: auto; max-width: 100%; max-height: 80vh; }
       .hero-status {
         position: relative; z-index: 2;
         max-width: 860px; margin: 1.5rem auto 0;
