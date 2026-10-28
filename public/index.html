@@ -490,21 +490,24 @@
       ::-webkit-scrollbar-track { background: var(--soil); }
       ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
       .gallery-item img{color:transparent}
-            /* ============================================================
-         MOBILE FIXES: keep shapes off the logo and copy
+                 /* ============================================================
+         SHAPE FIXES
          ============================================================ */
+      /* Remove the red shape at the top left of the main logo (all screens),
+         so it doesn't read as part of the logo */
+      #hero > img.deco:nth-of-type(1) { display: none; }
+
       @media (max-width: 640px) {
-        /* Hero logo: push the two top shapes out to the corners */
-        #hero > img.deco:nth-of-type(1) { top: 6px !important; left: -24px !important; }
+        /* Hero logo: push the top right shape out to the corner */
         #hero > img.deco:nth-of-type(3) { top: 6px !important; right: -14px !important; }
 
-        /* Hero: hide the shapes that land on the logo and text
-           (2 = pink triangle by the logo,
-            7 = blue squiggle over "pressed in our solventless",
-            13 = dots over "Cultivation is live!") */
+        /* Hero: hide the shapes that land on the logo and text */
         #hero > img.deco:nth-of-type(2),
         #hero > img.deco:nth-of-type(7),
         #hero > img.deco:nth-of-type(13) { display: none; }
+
+        /* Email sign-up: hide the red shape stuck behind the form */
+        .cta-section > img.deco:nth-of-type(5) { display: none; }
 
         /* Pillars: more room above the Living Soil card,
            and the dots and squiggle tucked up into the corners */
