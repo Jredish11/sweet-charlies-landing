@@ -490,6 +490,28 @@
       ::-webkit-scrollbar-track { background: var(--soil); }
       ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
       .gallery-item img{color:transparent}
+            /* ============================================================
+         MOBILE FIXES: keep shapes off the logo and copy
+         ============================================================ */
+      @media (max-width: 640px) {
+        /* Hero logo: push the two top shapes out to the corners */
+        #hero > img.deco:nth-of-type(1) { top: 6px !important; left: -24px !important; }
+        #hero > img.deco:nth-of-type(3) { top: 6px !important; right: -14px !important; }
+
+        /* Hero: hide the shapes that land on the logo and text
+           (2 = pink triangle by the logo,
+            7 = blue squiggle over "pressed in our solventless",
+            13 = dots over "Cultivation is live!") */
+        #hero > img.deco:nth-of-type(2),
+        #hero > img.deco:nth-of-type(7),
+        #hero > img.deco:nth-of-type(13) { display: none; }
+
+        /* Pillars: more room above the Living Soil card,
+           and the dots and squiggle tucked up into the corners */
+        .pillars { padding-top: 7rem; }
+        .pillars > img.deco:nth-of-type(1),
+        .pillars > img.deco:nth-of-type(2) { top: -6px !important; }
+      }
     </style>
   </head>
 
