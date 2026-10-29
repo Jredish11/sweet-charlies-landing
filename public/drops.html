@@ -213,6 +213,8 @@
 
       @media (max-width: 640px) { .drop-meta { grid-template-columns: 1fr; } .coming-card { padding: 2.5rem 1.25rem; } }
     </style>
+    <!-- Vercel Web Analytics: turn on under the project's Analytics tab in Vercel -->
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
 
   <body>
@@ -303,33 +305,26 @@
       -->
 
       <!--
-        RETAILERS SECTION: uncomment when drops are live.
-
-      <section class="retailers shapes">
+        RETAILERS MAP
+        1. Build the map at https://www.google.com/mymaps and add a pin for each store.
+        2. Share > set to "Anyone with the link can view".
+        3. Menu (three dots) > "Embed on my site" > copy ONLY the src="..." link.
+        4. Paste it into data-map-src below, then commit and push. One time only.
+        After that, add or remove stores in My Maps and the site updates by itself.
+        While data-map-src is empty, this whole section stays hidden.
+      -->
+      <section class="retailers shapes" id="retailers" data-map-src="https://www.google.com/maps/d/embed?mid=179TjZLYAVLHwUs6ttUakc4QX1iju2l8&amp;ehbc=2E312F&amp;noprof=1" hidden>
         <div class="retailers-inner reveal">
           <div class="retailers-header">
             <p class="retailers-eyebrow">Where to Find</p>
             <h2 class="retailers-title t-display">Participating Retailers</h2>
           </div>
           <div class="map-wrap">
-            <iframe src="YOUR_GOOGLE_MY_MAPS_EMBED_URL" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sweet Charlie's Retailers Map"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Colorado retailers carrying Sweet Charlie's"></iframe>
           </div>
-          <div class="retailers-grid">
-            <div class="retailer-item">
-              <p class="retailer-name t-display">Retailer Name</p>
-              <p class="retailer-location">City, CO</p>
-              <p class="retailer-note">Drop day / product notes</p>
-            </div>
-            <div class="retailer-item">
-              <p class="retailer-name t-display">Retailer Name</p>
-              <p class="retailer-location">City, CO</p>
-              <p class="retailer-note">Drop day / product notes</p>
-            </div>
-          </div>
-          <p class="retailers-fine">Retail availability varies. Check with the store for current inventory.</p>
+          <p class="retailers-fine">Retailers coming with our first drop in 2027. Once we're on shelves, tap a pin for store details.</p>
         </div>
       </section>
-      -->
 
     </main>
 
@@ -362,6 +357,13 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
+        const retailers = document.getElementById('retailers');
+        const mapSrc = retailers && retailers.dataset.mapSrc.trim();
+        if (mapSrc) {
+          retailers.querySelector('iframe').src = mapSrc;
+          retailers.hidden = false;
+        }
+
         const io = new IntersectionObserver((entries) => {
           entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
         }, { threshold: 0.12 });
